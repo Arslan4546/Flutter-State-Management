@@ -43,6 +43,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
+    // ager humm is listen ko true kryn gy to ye parents k tmam widgets ko listen able bna dy ga or ye hum ni chahty iss lyee iss ko humm ny false rakha hai
     Provider.of<Counter>(context, listen: false).increment();
   }
 
