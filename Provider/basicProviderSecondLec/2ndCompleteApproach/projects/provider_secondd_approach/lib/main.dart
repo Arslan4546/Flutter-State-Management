@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider_secondd_approach/counter_text.dart';
+import 'package:provider_secondd_approach/floating_action_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,10 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,14 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
+            CounterText(),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: FloatingActionButtonWidget(),
     );
   }
 }
