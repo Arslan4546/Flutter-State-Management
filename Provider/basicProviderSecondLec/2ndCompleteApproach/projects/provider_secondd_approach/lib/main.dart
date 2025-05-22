@@ -19,6 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      // here you can also use multiProvider to use multiple providers
+      // but the worst things is that the provider can provider the first similar data type data becasue it search
+      // with the type of the data not the name of the data
+      // mtlab ager huamin dosri string ko acccess krna ho to ni kr pyn gy ye humain phli string he return kry ga badly mai
       home: ChangeNotifierProvider(
         create: (context) => Counter(),
         child: const MyHomePage(title: "Provider Second / Best Approach"),
