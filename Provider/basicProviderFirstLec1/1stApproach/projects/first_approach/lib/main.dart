@@ -1,4 +1,5 @@
 import 'package:first_approach/counter.dart';
+import 'package:first_approach/student.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,10 +17,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ChangeNotifierProvider(
-        create: (context) => Counter(),
+      home: Provider<Student>(
+        create: (context) {
+          return Student();
+        },
         child: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
+
+      // home: ChangeNotifierProvider(
+      //   create: (context) => Counter(),
+      //   child: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // ),
     );
   }
 }
@@ -40,6 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var std = Provider.of<Student>(context);
+    print("Roll No: ${std.rollNo}");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
