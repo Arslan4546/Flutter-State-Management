@@ -23,10 +23,22 @@ class MyApp extends StatelessWidget {
       // but the worst things is that the provider can provider the first similar data type data becasue it search
       // with the type of the data not the name of the data
       // mtlab ager huamin dosri string ko acccess krna ho to ni kr pyn gy ye humain phli string he return kry ga badly mai q k ye type base search krta hai not data base
-      home: ChangeNotifierProvider(
-        create: (context) => Counter(),
-        child: const MyHomePage(title: "Provider Second / Best Approach"),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => Counter()),
+          Provider<String>(
+            create: (context) => "This is the first provider string",
+          ),
+          Provider<String>(
+            create: (context) => "This is the second provider string",
+          ),
+        ],
+        child: MyHomePage(title: "This is the best Approach/2nd of Provider"),
       ),
+      // home: ChangeNotifierProvider(
+      //   create: (context) => Counter(),
+      //   child: const MyHomePage(title: "Provider Second / Best Approach"),
+      // ),
     );
   }
 }
@@ -43,6 +55,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var stringOfProvider = Provider.of<String>(context, listen: false);
+    // this is the way to get the string from the provider
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -52,10 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            CounterText(),
-          ],
+          children: <Widget>[Text(stringOfProvider), CounterText()],
         ),
       ),
       floatingActionButton: FloatingActionButtonWidget(),
