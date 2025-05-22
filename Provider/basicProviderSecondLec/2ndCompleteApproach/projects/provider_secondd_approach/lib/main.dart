@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_secondd_approach/counter.dart';
 import 'package:provider_secondd_approach/counter_text.dart';
 import 'package:provider_secondd_approach/floating_action_button.dart';
 
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ChangeNotifierProvider(
+        create: (context) => Counter(),
+        child: const MyHomePage(title: "Provider Second / Best Approach"),
+      ),
     );
   }
 }
