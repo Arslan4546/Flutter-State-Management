@@ -61,6 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
+            // Basically we use consumer widget when we want to listen to the changes in the the Center of our UI
+            //  its not the best approach to use Consumer widget in center of our ui but the best approach is to use it in the widget where we want to listen to the changes i mean in the separate file
+            // But in this case we are using it in the center of our ui
             Consumer<Counter>(
               builder: (context, value, child) {
                 return Text(
