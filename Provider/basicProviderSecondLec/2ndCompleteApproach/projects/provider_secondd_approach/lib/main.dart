@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       // here you can also use multiProvider to use multiple providers
       // but the worst things is that the provider can provider the first similar data type data becasue it search
       // with the type of the data not the name of the data
-      // mtlab ager huamin dosri string ko acccess krna ho to ni kr pyn gy ye humain phli string he return kry ga badly mai
+      // mtlab ager huamin dosri string ko acccess krna ho to ni kr pyn gy ye humain phli string he return kry ga badly mai q k ye type base search krta hai not data base
       home: ChangeNotifierProvider(
         create: (context) => Counter(),
         child: const MyHomePage(title: "Provider Second / Best Approach"),
