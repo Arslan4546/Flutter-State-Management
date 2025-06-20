@@ -74,7 +74,7 @@ class InitialdataWidget extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            context.read()<ProductApiProvider>().fetchProductAPI();
+            context.read<ProductApiProvider>().fetchProductAPI();
           },
           child: Text("Fetch Data"),
         ),
