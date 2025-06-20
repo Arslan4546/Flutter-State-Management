@@ -1,14 +1,25 @@
-import 'package:template_api_practice/API_Service/api_service.dart';
-import 'package:template_api_practice/API_Service/product_model.dart';
+import 'package:flutter/material.dart';
+import 'api_service.dart';
+import 'product_model.dart';
 
-class ProductApiProvider extends ApiService {
+class ProductApiProvider extends ApiService with ChangeNotifier {
   @override
   String get apiURL => "/products";
 
   // fetchProductAPI function
+  bool isInitial = true;
+  bool isLoading = false;
+  bool isLoaded = false;
+  late List<ProductModel> productList;
 
   Future<List<ProductModel>> fetchProductAPI() async {
+    isInitial = false;
+    isLoading = true;
+    notifyListeners();
     List<dynamic> jsonList = await fetchAPI();
+    isLoading = false;
+    isLoaded = true;
+    notifyListeners();
     return jsonList.map((map) => ProductModel.fromMap(map)).toList();
   }
 
