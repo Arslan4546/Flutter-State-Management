@@ -16,11 +16,12 @@ class ProductApiProvider extends ApiService with ChangeNotifier {
     isInitial = false;
     isLoading = true;
     notifyListeners();
-    List<dynamic> jsonList = await fetchAPI();
+    List jsonList = await fetchAPI();
     isLoading = false;
     isLoaded = true;
     notifyListeners();
-    return jsonList.map((map) => ProductModel.fromMap(map)).toList();
+    productList = jsonList.map((map) => ProductModel.fromMap(map)).toList();
+    return productList;
   }
 
   // fetchProductAPIBySingleID function

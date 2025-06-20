@@ -37,6 +37,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    context.read<ProductApiProvider>().fetchProductAPI();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -45,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Consumer<ProductApiProvider>(
           builder: (context, value, child) {
             if (value.isInitial) {
-              return const Center(child: InitialdataWidget());
+              return const Center(child: CircularProgressIndicator());
             } else if (value.isLoading) {
               return const Center(child: CircularProgressIndicator());
             } else if (value.isLoaded) {
@@ -60,28 +67,28 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class InitialdataWidget extends StatelessWidget {
-  const InitialdataWidget({super.key});
+// class InitialdataWidget extends StatelessWidget {
+//   const InitialdataWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          "Press the button to fetch data",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            context.read<ProductApiProvider>().fetchProductAPI();
-          },
-          child: Text("Fetch Data"),
-        ),
-      ],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: [
+//         Text(
+//           "Press the button to fetch data",
+//           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//         ),
+//         ElevatedButton(
+//           onPressed: () {
+//             context.read<ProductApiProvider>().fetchProductAPI();
+//           },
+//           child: Text("Fetch Data"),
+//         ),
+//       ],
+//     );
+//   }
+// }
 
 class ListViewWidget extends StatelessWidget {
   const ListViewWidget({super.key, required this.productList});
