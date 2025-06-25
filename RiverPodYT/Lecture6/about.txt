@@ -1,0 +1,2 @@
+--> in this example we will learn state Notifier Provider in easy way 
+--> and now in this example we have learned the stateNotifier see in the practice folder for coding 
