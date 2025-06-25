@@ -1,0 +1,8 @@
+--> not only the statemanagement but work for cache management.
+--> manage dependency injection.
+--> riverpod check your code compile time
+--> riverpod itself a dart class not widget 
+--> riverpod also manage the error handling at its own but you can use this error into your ui
+--> future & stream are easy to handle in the riverpod
+--> we will also pracitce with state modifier provider such as deleteing, updating, or modifying list.
+--> we will also learn how the scopeProvider() work on the top.
