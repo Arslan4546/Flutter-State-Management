@@ -5,6 +5,6 @@ final apiProvider = Provider<AlbumApi>((ref) {
   return AlbumApi();
 });
 
-final futureProvider = FutureProvider<String>((ref) async {
+final apiFetchDataProvider = FutureProvider<String>((ref) {
   return ref.read(apiProvider).fetchData();
 });
