@@ -5,6 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 // this is the constant provider that we use as a practice
+
 // final globalProvider = Provider<String>((ref) {
 //   return 'Hello, Riverpod!';
 // });
