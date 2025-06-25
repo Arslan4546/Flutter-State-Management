@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+final globalProvider = Provider<String>((ref) {
+  return 'Hello, Riverpod!';
+});
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,11 +25,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends ConsumerWidget {
   const MyHomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final message = ref.watch(globalProvider);
+    return Center(child: Text(message));
   }
 }

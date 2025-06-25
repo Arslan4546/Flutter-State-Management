@@ -1,2 +1,3 @@
 --> now we will learn the counter examlple/ or understanding the state provider in this lecture 
---> 
+--> first we will practice the state provider with stateless widget and then with stateful widget 
+but there is a little bit different to use both of them 
