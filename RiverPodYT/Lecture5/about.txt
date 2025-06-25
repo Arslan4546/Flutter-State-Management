@@ -1,0 +1,2 @@
+--> in this lecture we learn how to handle multiple state provider 
+--> in this lecture we have learned how to use multiple state provider in convineient way you can overview this project in this lecture i have practiced this 
