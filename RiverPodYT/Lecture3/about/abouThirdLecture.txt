@@ -1,6 +1,6 @@
 --> you can see the images which we study to use simple constant provider.
 --> basically providerScope() manage the state of single or multiple provider and also manage dependency injection.
---> when you use stateful widget you cannot put the (WidgetRed ref) in the build() method 
+--> when you use stateful widget you cannot put the (WidgetRed ref) in the build() method just made the ConsumerStatefulWidget() and use the reference easyily
 --> just watch and listen the provider you made in this regard.
 --> in this lecture we learn to read and listen the simple constant provider..
  

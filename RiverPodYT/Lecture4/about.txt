@@ -1,3 +1,8 @@
 --> now we will learn the counter examlple/ or understanding the state provider in this lecture 
 --> first we will practice the state provider with stateless widget and then with stateful widget 
 but there is a little bit different to use both of them 
+--> ager ap stateless widget use kr rhy hain to ap initState() mai provider ko read, watch ni kr skty iss k lyee apko 
+stateful widget k need hoti hain or or ager q k aisi conditions ati hai jhan apko state ko change or modify krny k lyee stateful 
+widget k zaroorat hoti hain q k apko flutter k life cycle ko samajna hota hai or accordingly use krna hota hai 
+
+
