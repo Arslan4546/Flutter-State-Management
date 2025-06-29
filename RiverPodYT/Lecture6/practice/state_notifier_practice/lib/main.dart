@@ -34,7 +34,7 @@ class MyHomePage extends ConsumerWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Consumer(
               builder: (context, ref, child) {
                 print("toggle text showed");
