@@ -1,0 +1,3 @@
+--> in this lecture we will learn further concepts in the riverPod 
+--> also we learn how to make favorite items from the lists and also show only favorite item in the list 
+--> 
