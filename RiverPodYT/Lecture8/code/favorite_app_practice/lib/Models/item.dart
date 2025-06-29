@@ -1,14 +1,14 @@
 class Item {
-  final String id;
+  final int id;
   final String name;
-  final bool isSelected;
-  Item({required this.id, required this.name, this.isSelected = false});
+  final bool favorite;
+  Item({required this.id, required this.name, this.favorite = false});
 
-  Item copyWith({String? id, String? name, bool? isSelected}) {
+  Item copyWith({int? id, String? name, bool? favorite}) {
     return Item(
       id: id ?? this.id,
       name: name ?? this.name,
-      isSelected: isSelected ?? this.isSelected,
+      favorite: favorite ?? this.favorite,
     );
   }
 }
