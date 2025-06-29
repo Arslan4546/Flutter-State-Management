@@ -1,4 +1,4 @@
 --> in this lecture we also learn the state Notifier in this lecture 
 --> In this lectrue we perform the CRUD operation on the list means add , delete, modify and update 
 --> state Notifier provider is used to managee the complex states 
---<> 
+--> overview the code wirtten in the practice folder
