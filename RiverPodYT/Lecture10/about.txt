@@ -1,4 +1,4 @@
 --> in this code we will learn the stream provider
 --> in stream we noticed the incomming data periodically and repeatedly
 --> Riverpod is simple to manage streams
---> 
+--> now we have learned the stream provider easily 
