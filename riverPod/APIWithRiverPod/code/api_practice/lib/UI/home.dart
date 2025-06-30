@@ -1,6 +1,6 @@
 import 'package:api_practice/API_Service/product_model.dart';
-import 'package:api_practice/product_states.dart';
-import 'package:api_practice/provider.dart';
+import 'package:api_practice/providers.dart/product_states.dart';
+import 'package:api_practice/providers.dart/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
