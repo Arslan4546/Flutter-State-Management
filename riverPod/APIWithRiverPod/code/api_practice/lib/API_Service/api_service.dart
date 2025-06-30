@@ -16,6 +16,7 @@ abstract class ApiService {
     var response = await get(Uri.parse(url));
     if (response.isSuccessfull) {
       var data = jsonDecode(response.body);
+      print("json decode");
       return data["products"];
     }
   }

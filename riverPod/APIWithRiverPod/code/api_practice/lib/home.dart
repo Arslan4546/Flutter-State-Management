@@ -34,11 +34,11 @@ class LoadingDataWidget extends StatelessWidget {
   }
 }
 
-class InitialdataWidget extends StatelessWidget {
+class InitialdataWidget extends ConsumerWidget {
   const InitialdataWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -46,7 +46,12 @@ class InitialdataWidget extends StatelessWidget {
           "Press the button to fetch data",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        ElevatedButton(onPressed: () {}, child: Text("Fetch Data")),
+        ElevatedButton(
+          onPressed: () {
+            ref.watch(productAPIProvider.notifier).fetchProduct();
+          },
+          child: Text("Fetch Data"),
+        ),
       ],
     );
   }
