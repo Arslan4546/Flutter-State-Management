@@ -1,3 +1,5 @@
 --> In this lecture  we will learn how the future provider works and how to do it 
 --> In this lecture we dont implement api but in general we have the idea abut future provider
+--> RiverPod handle the error regarding the future function will manage effeciently
+and this is the beauty of riverpod.
 --> 

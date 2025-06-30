@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:future_provider_practice/future_provider.dart';
 
-class Home extends StatelessWidget {
+class Home extends ConsumerWidget {
   const Home({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final futureValue = ref.watch(futureProvider);
     return Scaffold(
       appBar: AppBar(title: const Text('Home Page')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            futureValue.when(
+              skipLoadingOnRefresh: false,
+              data: (value) => Text('Value: $value'),
+              loading: () => const CircularProgressIndicator(),
+              error: (error, stack) => Text('Error: $error'),
+            ),
             // Here you can add a counter or any other widget
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Action to perform when the button is pressed
+          ref.refresh(futureProvider);
+          // Refresh the future provider
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
