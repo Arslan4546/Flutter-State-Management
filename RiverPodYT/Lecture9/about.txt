@@ -1,0 +1,3 @@
+--> In this lecture  we will learn how the future provider works and how to do it 
+--> In this lecture we dont implement api but in general we have the idea abut future provider
+--> 
