@@ -1,18 +1,18 @@
 import 'package:api_practice/API_Service/api_service.dart';
 import 'package:api_practice/API_Service/product_model.dart';
 
-sealed class AlbumState {}
+sealed class ProductState {}
 
-class AlbumInitialState extends AlbumState {}
+class ProductInitialState extends ProductState {}
 
-class AlbumLoadingState extends AlbumState {}
+class ProductLoadingState extends ProductState {}
 
-class AlbumLoadedState extends AlbumState {
+class ProductLoadedState extends ProductState {
   final List<ProductModel> productList;
-  AlbumLoadedState({required this.productList});
+  ProductLoadedState({required this.productList});
 }
 
-class AlbumErrorState extends AlbumState {
+class ProductErrorState extends ProductState {
   final String errorMessage;
-  AlbumErrorState({required this.errorMessage});
+  ProductErrorState({required this.errorMessage});
 }
