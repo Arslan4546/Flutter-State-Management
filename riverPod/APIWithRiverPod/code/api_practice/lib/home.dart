@@ -1,5 +1,5 @@
-import 'package:api_practice/API_Service/product_api_provider.dart';
 import 'package:api_practice/API_Service/product_model.dart';
+import 'package:api_practice/product_states.dart';
 import 'package:api_practice/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,7 +10,27 @@ class Home extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final apiProvider = ref.watch(productAPIProvider);
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: switch (apiProvider) {
+          ProductInitialState() => InitialdataWidget(),
+          ProductLoadingState() => LoadingDataWidget(),
+          ProductLoadedState(productList: var product) => LoadedDataWidget(
+            productList: product,
+          ),
+          ProductErrorState(errorMessage: var error) => Text(error.toString()),
+        },
+      ),
+    );
+  }
+}
+
+class LoadingDataWidget extends StatelessWidget {
+  const LoadingDataWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CircularProgressIndicator();
   }
 }
 
@@ -32,8 +52,8 @@ class InitialdataWidget extends StatelessWidget {
   }
 }
 
-class ListViewWidget extends StatelessWidget {
-  const ListViewWidget({super.key, required this.productList});
+class LoadedDataWidget extends StatelessWidget {
+  const LoadedDataWidget({super.key, required this.productList});
   final List<ProductModel> productList;
   @override
   Widget build(BuildContext context) {
