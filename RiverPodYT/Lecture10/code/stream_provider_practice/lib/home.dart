@@ -13,11 +13,17 @@ class Home extends ConsumerWidget {
         builder: (context, ref, child) {
           final asyncValue = ref.watch(streamProvider);
           return asyncValue.when(
+            skipLoadingOnRefresh: false,
             data: (price) => Center(
               child: Text('Current Price: \$${price.toStringAsFixed(2)}'),
             ),
             loading: () => const Center(child: CircularProgressIndicator()),
-            error: (error, stack) => Center(child: Text('Error: $error')),
+            error: (error, stack) => Center(
+              child: TextButton(
+                onPressed: () => ref.invalidate(streamProvider),
+                child: Text('Error: $error'),
+              ),
+            ),
           );
         },
       ),

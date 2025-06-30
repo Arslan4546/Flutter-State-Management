@@ -9,6 +9,7 @@ final streamProvider = StreamProvider<double>((ref) async* {
   while (true) {
     await Future.delayed(Duration(seconds: 1));
     currentPrice += random.nextDouble() * 4 - 2;
+    // Simulating an error for demonstration
     yield double.parse(currentPrice.toStringAsFixed(2));
   }
 });
