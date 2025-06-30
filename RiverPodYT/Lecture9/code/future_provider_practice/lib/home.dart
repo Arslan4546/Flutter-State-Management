@@ -18,11 +18,13 @@ class Home extends ConsumerWidget {
             futureValue.when(
               skipLoadingOnRefresh: false,
               // data: (value) => Text('Value: $value'),
-              data: (data) => ListView.builder(
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return ListTile(title: Text(data[index]));
-                },
+              data: (data) => Expanded(
+                child: ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(title: Text(data[index]));
+                  },
+                ),
               ),
               loading: () => const CircularProgressIndicator(),
               error: (error, stack) => Text('Error: $error'),
@@ -33,7 +35,7 @@ class Home extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.refresh(futureProvider);
+          ref.refresh(futureStringListProvider);
           // Refresh the future provider
         },
         tooltip: 'Increment',
