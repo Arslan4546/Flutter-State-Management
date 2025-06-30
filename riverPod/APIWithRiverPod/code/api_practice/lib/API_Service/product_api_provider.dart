@@ -1,28 +1,25 @@
-import 'package:flutter/material.dart';
+import 'package:api_practice/product_states.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'api_service.dart';
 import 'product_model.dart';
 
-class ProductApiProvider extends ApiService with ChangeNotifier {
+class ProductAPIStateNotifier extends StateNotifier<ProductState> {
+  ProductApiProvider productApiProvider = ProductApiProvider();
+  ProductAPIStateNotifier() : super(ProductInitialState());
+  void fetchProduct() async {
+    state = ProductLoadingState();
+    try {
+      var product = await productApiProvider.fetchAPI();
+      state = ProductLoadedState(productList: product);
+    } catch (e) {
+      state = ProductErrorState(errorMessage: e.toString());
+    }
+  }
+}
+
+class ProductApiProvider extends ApiService {
   @override
   String get apiURL => "/products";
-
-  // fetchProductAPI function
-  bool isInitial = true;
-  bool isLoading = false;
-  bool isLoaded = false;
-  late List<ProductModel> productList;
-
-  Future<List<ProductModel>> fetchProductAPI() async {
-    isInitial = false;
-    isLoading = true;
-    notifyListeners();
-    List jsonList = await fetchAPI();
-    isLoading = false;
-    isLoaded = true;
-    notifyListeners();
-    productList = jsonList.map((map) => ProductModel.fromMap(map)).toList();
-    return productList;
-  }
 
   // fetchProductAPIBySingleID function
 
