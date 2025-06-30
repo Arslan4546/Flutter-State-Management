@@ -5,3 +5,9 @@ final futureProvider = FutureProvider<int>((ref) async {
   await Future.delayed(const Duration(seconds: 2));
   return 42; // Returning a sample value
 });
+
+// this is future provider that returns an List<String> value after a delay
+final futureStringListProvider = FutureProvider<List<String>>((ref) async {
+  await Future.delayed(const Duration(seconds: 2));
+  return ['Item 1', 'Item 2', 'Item 3'];
+});

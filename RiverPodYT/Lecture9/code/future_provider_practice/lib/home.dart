@@ -7,7 +7,8 @@ class Home extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final futureValue = ref.watch(futureProvider);
+    // final futureValue = ref.watch(futureProvider);
+    final futureValue = ref.watch(futureStringListProvider);
     return Scaffold(
       appBar: AppBar(title: const Text('Home Page')),
       body: Center(
@@ -16,7 +17,13 @@ class Home extends ConsumerWidget {
           children: <Widget>[
             futureValue.when(
               skipLoadingOnRefresh: false,
-              data: (value) => Text('Value: $value'),
+              // data: (value) => Text('Value: $value'),
+              data: (data) => ListView.builder(
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  return ListTile(title: Text(data[index]));
+                },
+              ),
               loading: () => const CircularProgressIndicator(),
               error: (error, stack) => Text('Error: $error'),
             ),
