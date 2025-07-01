@@ -1,0 +1,2 @@
+--> in this lectrue we will learn the events and bloc processing and how the state changes accordingly 
+--> 
