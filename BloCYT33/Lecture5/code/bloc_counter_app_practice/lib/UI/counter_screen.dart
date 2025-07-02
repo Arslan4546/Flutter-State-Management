@@ -30,12 +30,14 @@ class _CounterScreenState extends State<CounterScreen> {
           FloatingActionButton(
             onPressed: () {
               // Increment logic
+              context.read<CounterBloc>().add(IncrementCounter());
             },
             child: Icon(Icons.add),
           ),
           FloatingActionButton(
             onPressed: () {
               // Decrement logic
+              context.read<CounterBloc>().add(DecrementCounter());
             },
             child: Icon(Icons.remove),
           ),
