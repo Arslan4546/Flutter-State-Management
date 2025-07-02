@@ -22,9 +22,20 @@ class Home extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[],
+        child: StreamBuilder(
+          stream: counterBloc.streamState,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Text(
+                snapshot.data!.count.toString(),
+                style: const TextStyle(fontSize: 30),
+              );
+            } else if (snapshot.hasError) {
+              return const Text('Error occurred');
+            } else {
+              return const CircularProgressIndicator();
+            }
+          },
         ),
       ),
       floatingActionButton: OverflowBar(
