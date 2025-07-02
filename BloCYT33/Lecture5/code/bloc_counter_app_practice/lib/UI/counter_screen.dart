@@ -1,4 +1,6 @@
+import 'package:bloc_counter_app_practice/Bloc/counter/bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -12,7 +14,16 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Counter Screen')),
-      body: Center(child: Text("")),
+      body: BlocBuilder<CounterBloc, CounterState>(
+        builder: (context, state) {
+          return Center(
+            child: Text(
+              state.counter.toString(),
+              style: TextStyle(fontSize: 24),
+            ),
+          );
+        },
+      ),
       floatingActionButton: OverflowBar(
         alignment: MainAxisAlignment.center,
         children: [
