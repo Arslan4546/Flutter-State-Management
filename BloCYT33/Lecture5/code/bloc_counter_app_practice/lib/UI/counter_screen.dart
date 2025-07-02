@@ -42,6 +42,7 @@ class _CounterScreenState extends State<CounterScreen> {
             child: Icon(Icons.remove),
           ),
         ],
+        // this is the counter screen that i created using flutter_bloc package
       ),
     );
   }
