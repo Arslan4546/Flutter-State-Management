@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vanella_implmentation_bloc/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,25 +16,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const Home(),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text('You have pushed the button this many times:'),
-            Text('0', style: TextStyle(fontSize: 24)),
-          ],
-        ),
-      ),
     );
   }
 }
