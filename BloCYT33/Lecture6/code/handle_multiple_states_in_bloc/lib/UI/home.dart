@@ -10,10 +10,22 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '0', // This should be replaced with a state variable to show the count
-              style: Theme.of(context).textTheme.headlineMedium,
+            Switch(
+              value: true,
+              onChanged: (value) {
+                // Handle switch change
+              },
+            ),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(width: 200, height: 200, color: Colors.blue),
+            ),
+            Slider(
+              value: 0.5,
+              onChanged: (value) {
+                // Handle slider change
+              },
             ),
           ],
         ),
