@@ -12,18 +12,21 @@ class ImagePicker extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Image Picker')),
       body: Center(
-        child: BlocBuilder(
+        child: BlocBuilder<ImagePickerBloc, ImagePickerState>(
           builder: (context, state) {
-          if (state.) {
-            
-          } else {
-            
-          }
+            if (state.imageFile == null) {
+              return InkWell(
+                onTap: () {
+                  context.read<ImagePickerBloc>().add(CameraImagePickerEvent());
+                },
+                child: CircleAvatar(child: Icon(Icons.camera)),
+              );
+            } else {
+              return Image.file(state.imageFile?.path as File);
+            }
           },
         ),
       ),
     );
   }
 }
-
-
