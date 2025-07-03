@@ -8,10 +8,7 @@ sealed class SwitchEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class EnableNotification extends SwitchEvent {
-  const EnableNotification();
-}
-
-class DisableNotification extends SwitchEvent {
-  const DisableNotification();
+@immutable
+class EnableOrDisableNotification extends SwitchEvent {
+  const EnableOrDisableNotification();
 }

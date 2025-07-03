@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:handle_multiple_states_in_bloc/Bloc/switch_bloc/bloc/switch_bloc.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,10 +12,16 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Switch(
-              value: true,
-              onChanged: (value) {
-                // Handle switch change
+            BlocBuilder<SwitchBloc, SwitchState>(
+              builder: (context, state) {
+                return Switch(
+                  value: state.isSwitch,
+                  onChanged: (value) {
+                    context.read<SwitchBloc>().add(
+                      EnableOrDisableNotification(),
+                    );
+                  },
+                );
               },
             ),
             const SizedBox(height: 20),
