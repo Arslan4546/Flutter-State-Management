@@ -6,13 +6,18 @@ part 'switch_state.dart';
 
 class SwitchBloc extends Bloc<SwitchEvent, SwitchState> {
   SwitchBloc() : super(SwitchState()) {
-    on<EnableOrDisableNotification>(_enableOrDisableNotification);
+    on<EnableOrDisableNotificationEvent>(_enableOrDisableNotification);
+    on<SliderEvent>(_sliderEvent);
   }
 
   void _enableOrDisableNotification(
-    EnableOrDisableNotification event,
+    EnableOrDisableNotificationEvent event,
     Emitter<SwitchState> emit,
   ) {
     emit(state.copyWith(isSwitch: !state.isSwitch));
+  }
+
+  void _sliderEvent(SliderEvent event, Emitter<SwitchState> emit) {
+    emit(state.copyWith(isSlider: event.slider));
   }
 }

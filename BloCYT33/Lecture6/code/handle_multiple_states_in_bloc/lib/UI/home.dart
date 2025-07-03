@@ -18,21 +18,35 @@ class Home extends StatelessWidget {
                   value: state.isSwitch,
                   onChanged: (value) {
                     context.read<SwitchBloc>().add(
-                      EnableOrDisableNotification(),
+                      EnableOrDisableNotificationEvent(),
                     );
                   },
                 );
               },
             ),
             const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(width: 200, height: 200, color: Colors.blue),
+            BlocBuilder<SwitchBloc, SwitchState>(
+              builder: (context, state) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    // ignore: deprecated_member_use
+                    color: Colors.red.withOpacity(state.isSlider),
+                  ),
+                );
+              },
             ),
-            Slider(
-              value: 0.5,
-              onChanged: (value) {
-                // Handle slider change
+
+            BlocBuilder<SwitchBloc, SwitchState>(
+              builder: (context, state) {
+                return Slider(
+                  value: state.isSlider,
+                  onChanged: (value) {
+                    context.read<SwitchBloc>().add(SliderEvent(slider: value));
+                  },
+                );
               },
             ),
           ],

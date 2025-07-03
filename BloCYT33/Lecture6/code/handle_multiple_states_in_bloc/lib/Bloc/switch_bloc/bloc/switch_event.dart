@@ -9,6 +9,12 @@ sealed class SwitchEvent extends Equatable {
 }
 
 @immutable
-class EnableOrDisableNotification extends SwitchEvent {
-  const EnableOrDisableNotification();
+class EnableOrDisableNotificationEvent extends SwitchEvent {
+  const EnableOrDisableNotificationEvent();
+}
+
+@immutable
+class SliderEvent extends SwitchEvent {
+  final double slider;
+  const SliderEvent({required this.slider});
 }
