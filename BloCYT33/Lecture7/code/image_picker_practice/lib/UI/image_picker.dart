@@ -22,7 +22,7 @@ class ImagePicker extends StatelessWidget {
                 child: CircleAvatar(child: Icon(Icons.camera)),
               );
             } else {
-              return Image.file(state.imageFile?.path as File);
+              return Image.file(File(state.imageFile!.path.toString()));
             }
           },
         ),
