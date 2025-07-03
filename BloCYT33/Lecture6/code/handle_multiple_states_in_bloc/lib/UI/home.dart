@@ -13,7 +13,10 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             BlocBuilder<SwitchBloc, SwitchState>(
+              buildWhen: (previous, current) =>
+                  previous.isSwitch != current.isSwitch,
               builder: (context, state) {
+                print("Switch Building");
                 return Switch(
                   value: state.isSwitch,
                   onChanged: (value) {
@@ -26,7 +29,10 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             BlocBuilder<SwitchBloc, SwitchState>(
+              buildWhen: (previous, current) =>
+                  previous.isSlider != current.isSlider,
               builder: (context, state) {
+                print("Container Building");
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
@@ -40,7 +46,10 @@ class Home extends StatelessWidget {
             ),
 
             BlocBuilder<SwitchBloc, SwitchState>(
+              buildWhen: (previous, current) =>
+                  previous.isSlider != current.isSlider,
               builder: (context, state) {
+                print("Slider Building");
                 return Slider(
                   value: state.isSlider,
                   onChanged: (value) {
