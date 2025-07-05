@@ -2,8 +2,19 @@ import 'package:favorite_select_del_practice/Bloc/favorite_bloc/bloc/favorite_bl
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class FavoriteScreen extends StatelessWidget {
+class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
+
+  @override
+  State<FavoriteScreen> createState() => _FavoriteScreenState();
+}
+
+class _FavoriteScreenState extends State<FavoriteScreen> {
+  @override
+  void initState() {
+    context.read<FavoriteBloc>().add(FetchListEvent());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +30,7 @@ class FavoriteScreen extends StatelessWidget {
                 itemCount: state.favoriteItemsList.length,
                 itemBuilder: (context, index) {
                   final item = state.favoriteItemsList[index];
-                  return ListTile(title: Text(item.value));
+                  return ListTile(title: Text(item.value.toString()));
                 },
               );
             case ListStatus.failed:
