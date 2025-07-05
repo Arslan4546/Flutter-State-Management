@@ -35,6 +35,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                     final item = state.favoriteItemsList[index];
                     return Card(
                       child: ListTile(
+                        leading: Checkbox(value: true, onChanged: (value) {}),
                         title: Text(item.id.toString()),
                         trailing: IconButton(
                           onPressed: () {

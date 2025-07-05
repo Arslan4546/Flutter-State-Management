@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class FavoriteItemModel extends Equatable {
-  final String id;
+  final int id;
   final String value;
   final bool isFavorite;
   final bool isDeleting;
@@ -14,7 +14,7 @@ class FavoriteItemModel extends Equatable {
   });
 
   FavoriteItemModel copyWith({
-    String? id,
+    int? id,
     String? value,
     bool? isFavorite,
     bool? isDeleting,
