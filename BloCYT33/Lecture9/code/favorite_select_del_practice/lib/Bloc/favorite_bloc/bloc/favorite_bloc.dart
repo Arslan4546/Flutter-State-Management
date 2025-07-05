@@ -18,6 +18,7 @@ class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
 
   void fetchListFun(FetchListEvent event, Emitter<FavoriteState> emit) async {
     favoriteList = await favoriteRepository.fetchItems();
+    print(favoriteList);
     emit(
       state.copyWith(
         favoriteItemsList: List.from(favoriteList),
