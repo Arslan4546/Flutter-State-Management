@@ -17,3 +17,20 @@ class FavoriteItemEvent extends FavoriteEvent {
   final FavoriteItemModel item;
   const FavoriteItemEvent({required this.item});
 }
+
+@immutable
+class SelectedItemEvent extends FavoriteEvent {
+  final FavoriteItemModel item;
+  const SelectedItemEvent({required this.item});
+}
+
+@immutable
+class UnSelectedItemEvent extends FavoriteEvent {
+  final FavoriteItemModel item;
+  const UnSelectedItemEvent({required this.item});
+}
+
+@immutable
+class DeleteSelectedItemEvent extends FavoriteEvent {
+  const DeleteSelectedItemEvent();
+}

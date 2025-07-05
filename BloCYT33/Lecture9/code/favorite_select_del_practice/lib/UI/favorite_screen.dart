@@ -20,7 +20,25 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Favorites')),
+      appBar: AppBar(
+        title: const Text('Favorites'),
+        actions: [
+          BlocBuilder<FavoriteBloc, FavoriteState>(
+            builder: (context, state) {
+              return Visibility(
+                visible: state.tempSelectedItemsList.isNotEmpty ? true : false,
+                child: IconButton(
+                  onPressed: () {
+                    context.read<FavoriteBloc>().add(DeleteSelectedItemEvent());
+                  },
+                  icon: const Icon(Icons.delete),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: BlocBuilder<FavoriteBloc, FavoriteState>(
@@ -35,7 +53,22 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                     final item = state.favoriteItemsList[index];
                     return Card(
                       child: ListTile(
-                        leading: Checkbox(value: true, onChanged: (value) {}),
+                        leading: Checkbox(
+                          value: state.tempSelectedItemsList.contains(item)
+                              ? true
+                              : false,
+                          onChanged: (value) {
+                            if (value!) {
+                              context.read<FavoriteBloc>().add(
+                                SelectedItemEvent(item: item),
+                              );
+                            } else {
+                              context.read<FavoriteBloc>().add(
+                                UnSelectedItemEvent(item: item),
+                              );
+                            }
+                          },
+                        ),
                         title: Text(item.id.toString()),
                         trailing: IconButton(
                           onPressed: () {
