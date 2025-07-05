@@ -24,7 +24,7 @@ class ListScreen extends StatelessWidget {
                       icon: const Icon(Icons.delete),
                       onPressed: () {
                         context.read<ListBloc>().add(
-                          DeleteEvent(state.items[index].toString()),
+                          DeleteEvent(state.items[index]),
                         );
                       },
                     ),
@@ -38,11 +38,17 @@ class ListScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        // this is the button to add single item to the list
+        // onPressed: () {
+        //   context.read<ListBloc>().add(AddEvent('Item'));
+        // },
         onPressed: () {
+          // this is the button to add 10 item to the list
           for (var i = 0; i < 10; i++) {
             context.read<ListBloc>().add(AddEvent('Item $i'));
           }
         },
+
         child: const Icon(Icons.add),
       ),
     );
