@@ -16,13 +16,17 @@ class ListScreen extends StatelessWidget {
               return const Text('No items yet');
             } else if (state.items.isNotEmpty) {
               return ListView.builder(
-                itemCount: 20,
+                itemCount: state.items.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text(index.toString()),
+                    title: Text(state.items[index]),
                     trailing: IconButton(
                       icon: const Icon(Icons.delete),
-                      onPressed: null,
+                      onPressed: () {
+                        context.read<ListBloc>().add(
+                          DeleteEvent(state.items[index].toString()),
+                        );
+                      },
                     ),
                   );
                 },

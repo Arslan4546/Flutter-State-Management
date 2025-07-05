@@ -11,5 +11,6 @@ class AddEvent extends ListEvent {
 }
 
 class DeleteEvent extends ListEvent {
-  const DeleteEvent();
+  final String item;
+  const DeleteEvent(this.item);
 }

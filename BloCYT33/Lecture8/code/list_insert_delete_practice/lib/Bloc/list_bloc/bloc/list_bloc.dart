@@ -10,7 +10,7 @@ class ListBloc extends Bloc<ListEvent, ListState> {
   ListBloc() : super(ListState()) {
     on<AddEvent>(_addFunction);
 
-    //    on<DeleteEvent>(_deleteFunction);
+    on<DeleteEvent>(_deleteFunction);
   }
 
   void _addFunction(AddEvent event, Emitter<ListState> emit) {
@@ -18,8 +18,8 @@ class ListBloc extends Bloc<ListEvent, ListState> {
     emit(state.copyWith(items: List.from(items)));
   }
 
-  // void _deleteFunction(DeleteEvent event, Emitter<ListState> emit) {
-  //   items.remove(event.item);
-  //   emit(state.copyWith(items: List.from(items)));
-  // }
+  void _deleteFunction(DeleteEvent event, Emitter<ListState> emit) {
+    items.remove(event.item);
+    emit(state.copyWith(items: List.from(items)));
+  }
 }

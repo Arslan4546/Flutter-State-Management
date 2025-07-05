@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:list_insert_delete_practice/Bloc/list_bloc/bloc/list_bloc.dart';
 import 'package:list_insert_delete_practice/UI/list_screen.dart';
 
 void main() {
@@ -10,13 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return BlocProvider(
+      create: (context) => ListBloc(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
 
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        home: const ListScreen(),
       ),
-      home: const ListScreen(),
     );
   }
 }
