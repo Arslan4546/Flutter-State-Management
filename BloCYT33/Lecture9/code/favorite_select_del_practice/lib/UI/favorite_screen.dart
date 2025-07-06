@@ -57,8 +57,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           value: state.tempSelectedItemsList.contains(item)
                               ? true
                               : false,
+
                           onChanged: (value) {
                             if (value!) {
+                              print(state.tempSelectedItemsList);
                               context.read<FavoriteBloc>().add(
                                 SelectedItemEvent(item: item),
                               );
