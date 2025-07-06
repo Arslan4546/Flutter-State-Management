@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:api_practice_with_bloc/Model/post_model.dart';
 import 'package:http/http.dart' as http;
@@ -15,6 +16,10 @@ class ApiRepository {
       } else {
         throw Exception('Failed to load posts');
       }
+    } on SocketException catch (e) {
+      throw Exception('No Internet connection: $e');
+    } on HttpException catch (e) {
+      throw Exception('HTTP error: $e');
     } catch (e) {
       throw Exception('Error fetching posts: $e');
     }
