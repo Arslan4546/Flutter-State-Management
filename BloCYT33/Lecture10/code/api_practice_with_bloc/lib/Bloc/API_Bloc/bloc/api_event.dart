@@ -10,3 +10,8 @@ sealed class ApiEvent extends Equatable {
 class FetchApiDataEvent extends ApiEvent {
   const FetchApiDataEvent();
 }
+
+class QueryEvent extends ApiEvent {
+  final String query;
+  const QueryEvent(this.query);
+}
