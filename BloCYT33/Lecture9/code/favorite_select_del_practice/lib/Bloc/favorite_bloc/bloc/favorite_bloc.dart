@@ -36,24 +36,24 @@ class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
     final index = favoriteList.indexWhere(
       (element) => element.id == event.item.id,
     );
-    // if (event.item.isFavorite) {
-    //   if (tempSelectedItemsList.contains(favoriteList[index])) {
-    //     tempSelectedItemsList.remove(favoriteList[index]);
-    //     tempSelectedItemsList.add(event.item);
-    //   }
-    // } else {
-    //   if (tempSelectedItemsList.contains(favoriteList[index])) {
-    //     tempSelectedItemsList.remove(favoriteList[index]);
-    //     tempSelectedItemsList.add(event.item);
-    //   }
-    // }
+    if (event.item.isFavorite) {
+      if (tempSelectedItemsList.contains(favoriteList[index])) {
+        tempSelectedItemsList.remove(favoriteList[index]);
+        tempSelectedItemsList.add(event.item);
+      }
+    } else {
+      if (tempSelectedItemsList.contains(favoriteList[index])) {
+        tempSelectedItemsList.remove(favoriteList[index]);
+        tempSelectedItemsList.add(event.item);
+      }
+    }
 
     favoriteList[index] = event.item;
     emit(
       state.copyWith(
         favoriteItemsList: List.from(favoriteList),
 
-        // tempSelectedItemsList: List.from(tempSelectedItemsList),
+        tempSelectedItemsList: List.from(tempSelectedItemsList),
       ),
     );
   }
