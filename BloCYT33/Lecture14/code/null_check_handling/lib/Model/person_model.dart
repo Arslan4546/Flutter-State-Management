@@ -4,11 +4,9 @@ part 'person_model.freezed.dart';
 part 'person_model.g.dart';
 
 @Freezed()
-class PersonModel with _$PersonModel {
-  const factory PersonModel({
-    @Default("") required String name,
-    @Default(0) required int age,
-  }) = _PersonModel;
+abstract class PersonModel with _$PersonModel {
+  const factory PersonModel({@Default("") String? name, @Default(0) int? age}) =
+      _PersonModel;
 
   factory PersonModel.fromJson(Map<String, dynamic> json) =>
       _$PersonModelFromJson(json);

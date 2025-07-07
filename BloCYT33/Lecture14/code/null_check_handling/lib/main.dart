@@ -29,9 +29,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<PersonModel> person = [
-    PersonModel(name: 'John Doe', age: 30),
-    PersonModel(name: 'Jane Smith', age: 25),
-    PersonModel(name: 'Alice Johnson', age: 28),
+    PersonModel(name: null, age: 30),
+    PersonModel(name: "Arslan", age: 25),
+    PersonModel(name: "Mannan", age: 28),
   ];
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         itemBuilder: (context, index) {
           final personModel = person[index];
           return ListTile(
-            title: Text(personModel.name),
+            title: Text(personModel.name.toString()),
             subtitle: Text('Age: ${personModel.age}'),
             trailing: IconButton(
               icon: const Icon(Icons.delete),
