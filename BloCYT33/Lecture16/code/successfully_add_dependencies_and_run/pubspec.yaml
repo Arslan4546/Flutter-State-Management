@@ -30,7 +30,7 @@ environment:
 dependencies:
   another_flushbar: ^1.12.30
   bloc: ^9.0.0
-  build_runner: ^2.5.4
+  
   cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
   equatable: ^2.0.7
@@ -45,10 +45,12 @@ dependencies:
   google_fonts: ^6.2.1
   http: ^1.4.0
   json_annotation: ^4.9.0
-  json_serializable: ^6.9.5
+  
 
 dev_dependencies:
   flutter_lints: ^5.0.0
+  build_runner: ^2.5.4
+  json_serializable: ^6.9.5 
   flutter_test:
     sdk: flutter
 
