@@ -1,0 +1,4 @@
+--> In this lecture we will learn global bloc and  bloc with limited context
+--> humm ab tak global bloc use krty aa rhy hain jo k ik achi practic ni hai iss mai humm local blog jin ka scope
+limited hota hai iss ko use krny k maqsad ye hai k ye app ko efficient banaty hain 
+-->  
