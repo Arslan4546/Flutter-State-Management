@@ -25,11 +25,8 @@ class PasswordChangedEvent extends LoginEvent {
 }
 
 class LoginAPIEvent extends LoginEvent {
-  final String email;
-  final String password;
-
-  LoginAPIEvent(this.email, this.password);
+  LoginAPIEvent();
 
   @override
-  List<Object?> get props => [email, password];
+  List<Object?> get props => [];
 }
