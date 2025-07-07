@@ -28,11 +28,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<PersonModel> person = [
-    PersonModel(name: null, age: 30),
-    PersonModel(name: "Arslan", age: 25),
-    PersonModel(name: "Mannan", age: 28),
-  ];
+  List<PersonModel> person = [];
+
+  @override
+  void initState() {
+    var data = [
+      {'name': 'John', 'age': 30},
+      {'name': 'Jane', 'age': 25},
+      {'name': 'Doe', 'age': 40},
+      {'name': 'John', 'age': 30},
+      {'name': null, 'age': 25},
+      {'name': null, 'age': 40},
+      {'name': 'John', 'age': 30},
+      {'name': 'Jane', 'age': 25},
+      {'name': 'Doe', 'age': 40},
+      {'name': 'Jane', 'age': 25},
+    ];
+    for (var item in data) {
+      person.add(PersonModel.fromJson(item));
+    }
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
