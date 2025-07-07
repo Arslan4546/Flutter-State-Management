@@ -1,0 +1,2 @@
+--> In this lecture we will learn the flutter freez.
+--> in this lecture we will also learn how to hanlde null check errors.
