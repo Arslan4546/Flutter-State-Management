@@ -26,13 +26,16 @@ class _CounterScreenState extends State<CounterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print("Scaffold reBuilding");
     return BlocProvider(
       create: (context) => _counterBloc,
+
       child: Scaffold(
         appBar: AppBar(title: Text('Counter Screen')),
         body: Center(
           child: BlocBuilder<CounterBloc, CounterState>(
             builder: (context, state) {
+              print("Text Rebuilding");
               return Text(
                 'Counter Value: ${state.counterValue}',
                 style: TextStyle(fontSize: 24),
@@ -44,7 +47,9 @@ class _CounterScreenState extends State<CounterScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             BlocBuilder<CounterBloc, CounterState>(
+              buildWhen: (previous, current) => false,
               builder: (context, state) {
+                print("Increment Rebuilding");
                 return FloatingActionButton(
                   onPressed: () {
                     context.read<CounterBloc>().add(IncrementCounter());
@@ -54,7 +59,9 @@ class _CounterScreenState extends State<CounterScreen> {
               },
             ),
             BlocBuilder<CounterBloc, CounterState>(
+              buildWhen: (previous, current) => false,
               builder: (context, state) {
+                print("Decrement Rebuilding");
                 return FloatingActionButton(
                   onPressed: () {
                     context.read<CounterBloc>().add(DecrementCounter());
