@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_signup_with_bloc/Bloc/login_bloc/bloc/login_bloc.dart';
+import 'package:login_signup_with_bloc/Utils/status_enums.dart';
 
 class NewLoginScreen extends StatefulWidget {
   const NewLoginScreen({super.key});
@@ -16,6 +17,12 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
   void initState() {
     _loginBloc = LoginBloc();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _loginBloc.close();
+    super.dispose();
   }
 
   final emailFocusNode = FocusNode();
@@ -60,28 +67,55 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                   },
                 ),
                 const SizedBox(height: 20),
-                TextFormField(
-                  keyboardType: TextInputType.text,
-                  focusNode: passwordFocusNode,
-                  decoration: const InputDecoration(
-                    hintText: 'Password',
-                    border: OutlineInputBorder(),
-                  ),
-                  onChanged: (value) {},
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Enter password';
-                    }
-                    return null;
+                BlocBuilder<LoginBloc, LoginState>(
+                  builder: (context, state) {
+                    return TextFormField(
+                      keyboardType: TextInputType.text,
+                      focusNode: passwordFocusNode,
+                      decoration: const InputDecoration(
+                        hintText: 'Password',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (value) {
+                        context.read<LoginBloc>().add(
+                          PasswordChangedEvent(value),
+                        );
+                      },
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Enter password';
+                        }
+                        return null;
+                      },
+                      onFieldSubmitted: (value) {},
+                    );
                   },
-                  onFieldSubmitted: (value) {},
                 ),
                 const SizedBox(height: 50),
-                ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {}
+                BlocListener<LoginBloc, LoginState>(
+                  listener: (context, state) {
+                    if (state.status == LoginStatus.success) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(state.errorMessage)),
+                      );
+                    } else if (state.status == LoginStatus.failed) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(state.errorMessage)),
+                      );
+                    }
                   },
-                  child: const Text('Login'),
+                  child: BlocBuilder<LoginBloc, LoginState>(
+                    builder: (context, state) {
+                      return ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            context.read<LoginBloc>().add(LoginAPIEvent());
+                          }
+                        },
+                        child: const Text('Login'),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),

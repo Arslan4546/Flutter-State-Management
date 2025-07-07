@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:http/http.dart' as http;
@@ -22,24 +24,24 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(state.copyWith(password: event.password));
   }
 
-  Future<void> _onLoginAPI(
-    LoginAPIEvent event,
-    Emitter<LoginState> emit,
-  ) async {
-    Map data = {"email": state.email, "password": state.password};
+  void _onLoginAPI(LoginAPIEvent event, Emitter<LoginState> emit) async {
+    Map data = {"username": state.email, "password": state.password};
 
     try {
       final response = await http.post(
-        Uri.parse("https://reqres.in/api/login"),
-        body: data,
+        Uri.parse("https://dummyjson.com/auth/login"),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(data),
       );
       if (response.statusCode == 200) {
+        print('Login successful: ${response.body}');
         emit(
           state.copyWith(
             status: LoginStatus.success,
             errorMessage: 'Login successful',
           ),
         );
+        emit(state.copyWith(status: LoginStatus.initial));
       } else {
         emit(
           state.copyWith(
@@ -47,6 +49,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             errorMessage: 'Login failed',
           ),
         );
+        emit(state.copyWith(status: LoginStatus.initial));
       }
     } catch (e) {
       emit(
