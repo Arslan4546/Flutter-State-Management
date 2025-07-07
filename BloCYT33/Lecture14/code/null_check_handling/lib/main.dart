@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:null_check_handling/Model/person_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,20 +28,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<PersonModel> person = [
+    PersonModel(name: 'John Doe', age: 30),
+    PersonModel(name: 'Jane Smith', age: 25),
+    PersonModel(name: 'Alice Johnson', age: 28),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text('', style: Theme.of(context).textTheme.headlineMedium),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: person.length,
+        itemBuilder: (context, index) {
+          final personModel = person[index];
+          return ListTile(
+            title: Text(personModel.name),
+            subtitle: Text('Age: ${personModel.age}'),
+            trailing: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: null,
+            ),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

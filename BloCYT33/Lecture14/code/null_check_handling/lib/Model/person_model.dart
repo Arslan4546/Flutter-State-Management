@@ -5,8 +5,10 @@ part 'person_model.g.dart';
 
 @Freezed()
 class PersonModel with _$PersonModel {
-  const factory PersonModel({required String name, required int age}) =
-      _PersonModel;
+  const factory PersonModel({
+    @Default("") required String name,
+    @Default(0) required int age,
+  }) = _PersonModel;
 
   factory PersonModel.fromJson(Map<String, dynamic> json) =>
       _$PersonModelFromJson(json);
