@@ -2,6 +2,7 @@ class AppExceptions {
   final _message;
   final _prefix;
   AppExceptions([this._message, this._prefix]);
+  @override
   String toString() {
     return "$_prefix$_message";
   }
@@ -16,8 +17,8 @@ class BadRequestException extends AppExceptions {
   BadRequestException(String message) : super(message, "Invalid Request: ");
 }
 
-class UnauthorisedException extends AppExceptions {
-  UnauthorisedException(String message) : super(message, "Unauthorised: ");
+class UnauthorizedException extends AppExceptions {
+  UnauthorizedException(String message) : super(message, "Unauthorized: ");
 }
 
 class InvalidInputException extends AppExceptions {
