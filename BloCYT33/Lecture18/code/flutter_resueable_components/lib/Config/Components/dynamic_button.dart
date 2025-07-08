@@ -23,7 +23,7 @@ class DynamicButtonWidget extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
           decoration: BoxDecoration(
-            color: AppColors.textColor,
+            color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(text),
