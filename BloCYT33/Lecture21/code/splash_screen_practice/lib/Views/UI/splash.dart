@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:splash_screen_practice/Services/Splash/splash_screen_services.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  SplashScreenServices _splashScreenServices = SplashScreenServices();
+
+  @override
+  void initState() {
+    _splashScreenServices.isLogin(context);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
