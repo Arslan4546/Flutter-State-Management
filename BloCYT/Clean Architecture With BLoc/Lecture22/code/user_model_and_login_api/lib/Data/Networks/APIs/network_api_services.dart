@@ -69,7 +69,7 @@ class BaseAPIServices implements BaseApiServices {
 
   // this method is used to handle the response from the server
   dynamic returnResponse(http.Response response) {
-    switch (response) {
+    switch (response.statusCode) {
       case 200:
         dynamic jsonResponse = jsonDecode(response.body);
         return jsonResponse;
