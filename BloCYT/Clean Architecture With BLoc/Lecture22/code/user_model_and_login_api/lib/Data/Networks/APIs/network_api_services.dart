@@ -10,9 +10,7 @@ class LoginAPIServices implements BaseApiServices {
   Future<dynamic> getAPI(String url) async {
     dynamic jsonResponse;
     try {
-      final response = await http
-          .get(Uri.parse(url))
-          .timeout(const Duration(seconds: 10));
+      final response = await http.get(Uri.parse(url));
 
       jsonResponse = returnResponse(response);
     } on SocketException {
@@ -28,14 +26,7 @@ class LoginAPIServices implements BaseApiServices {
   Future<dynamic> postAPI(String url, var data) async {
     dynamic jsonResponse;
     try {
-      final response = await http
-          .post(Uri.parse(url), body: data)
-          .timeout(
-            const Duration(seconds: 10),
-            onTimeout: () {
-              throw TimeoutException("Request Timeout");
-            },
-          );
+      final response = await http.post(Uri.parse(url), body: data);
 
       jsonResponse = returnResponse(response);
     } on SocketException {

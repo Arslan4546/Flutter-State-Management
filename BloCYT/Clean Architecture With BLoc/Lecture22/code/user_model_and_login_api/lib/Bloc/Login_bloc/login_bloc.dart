@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_event.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_states.dart';
 import 'package:splash_screen_practice/Repositories/Login_Repositories/login_repo.dart';
-import 'package:splash_screen_practice/Utils/Enums/api_enum.dart';
+import 'package:splash_screen_practice/Repositories/Utils/Enums/enum.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginStates> {
   final LoginRepo _loginRepo = LoginRepo();
@@ -33,7 +33,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginStates> {
     await _loginRepo
         .loginAPI(data)
         .then((value) {
-          if (state.errorMessage.isEmpty) {
+          if (value.error.isEmpty) {
             emit(
               state.copyWith(
                 apiStatus: APIStatus.success,
