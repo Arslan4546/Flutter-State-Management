@@ -7,8 +7,8 @@ class LoginStates extends Equatable {
 
   LoginStates copyWith({String? email, String? password}) {
     return LoginStates(
-      email = email ?? this.email,
-      password = password ?? this.password,
+      email: email ?? this.email,
+      password: password ?? this.password,
     );
   }
 
