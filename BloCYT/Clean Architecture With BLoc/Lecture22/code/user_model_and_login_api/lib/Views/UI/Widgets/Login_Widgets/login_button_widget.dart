@@ -8,13 +8,9 @@ class LoginButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        if (formKey.currentState!.validate()) {
-        
-        }
+        if (formKey.currentState!.validate()) {}
       },
-      child: state.loginStatus == LoginStatus.loading
-          ? CircularProgressIndicator()
-          : const Text('Login'),
+      child: const Text('Login'),
     );
   }
 }
