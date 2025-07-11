@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:splash_screen_practice/Bloc/Login_bloc/login_bloc.dart';
+import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/email_widget.dart';
+import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/login_button_widget.dart';
+import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/password_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,45 +18,32 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final _formKey = GlobalKey<FormState>();
 
+  late LoginBloc _loginBloc;
+  @override
+  void initState() {
+    _loginBloc = LoginBloc();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Login')),
       body: BlocProvider(
-        create: (_) => _loginBlocs,
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Form(
             key: _formKey,
-            child: BlocListener<LoginBloc, LoginState>(
-              listenWhen: (previous, current) =>
-                  current.loginStatus != previous.loginStatus,
-              listener: (context, state) {
-                if (state.loginStatus == LoginStatus.error) {
-                  ScaffoldMessenger.of(context)
-                    ..hideCurrentSnackBar()
-                    ..showSnackBar(
-                      SnackBar(content: Text(state.message.toString())),
-                    );
-                }
-
-                if (state.loginStatus == LoginStatus.success) {
-                  ScaffoldMessenger.of(context)
-                    ..hideCurrentSnackBar()
-                    ..showSnackBar(
-                      const SnackBar(content: Text('Login successful')),
-                    );
-                }
-              },
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 20),
-
-                  const SizedBox(height: 50),
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                EmailWidget(passwordFocusNode: passwordFocusNode),
+                const SizedBox(height: 20),
+                PasswordWidget(passwordFocusNode: passwordFocusNode),
+                const SizedBox(height: 50),
+                LoginButtonWidget(formKey: _formKey),
+              ],
             ),
           ),
         ),
