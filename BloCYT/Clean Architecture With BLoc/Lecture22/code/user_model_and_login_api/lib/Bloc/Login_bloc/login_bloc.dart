@@ -22,13 +22,15 @@ class LoginBloc extends Bloc<LoginEvent, LoginStates> {
     emit(state.copyWith(email: event.password));
   }
 
-  void _loginFun(SubmitButtonEvent event, Emitter<LoginStates> emit) {
+  void _loginFun(SubmitButtonEvent event, Emitter<LoginStates> emit) async {
     Map<String, dynamic> data = {
       "email": state.email,
       "password": state.password,
     };
 
-    _loginRepo
+    emit(state.copyWith(apiStatus: APIStatus.loading));
+
+    await _loginRepo
         .loginAPI(data)
         .then((value) {
           if (state.errorMessage.isEmpty) {

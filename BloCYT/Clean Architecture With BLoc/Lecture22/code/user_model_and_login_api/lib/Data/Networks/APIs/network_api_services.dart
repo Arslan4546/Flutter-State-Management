@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'package:splash_screen_practice/Data/Exceptions/app_exceptions%20copy.dart';
+import 'package:splash_screen_practice/Data/Exceptions/app_exceptions%20.dart';
 import 'package:splash_screen_practice/Data/Networks/APIs/base_api_services.dart';
 
-class BaseAPIServices implements BaseApiServices {
+class LoginAPIServices implements BaseApiServices {
   @override
   Future<dynamic> getAPI(String url) async {
     dynamic jsonResponse;
