@@ -22,3 +22,5 @@ class PasswordEvent extends LoginEvent {
 class EmailUnFocusEvent extends LoginEvent {}
 
 class PasswordUnFocusEvent extends LoginEvent {}
+
+class SubmitButtonEvent extends LoginEvent {}
