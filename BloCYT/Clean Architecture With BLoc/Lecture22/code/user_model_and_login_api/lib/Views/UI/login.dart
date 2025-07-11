@@ -6,7 +6,7 @@ import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/login_butt
 import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/password_widget.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -30,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Login')),
       body: BlocProvider(
+        create: (context) => _loginBloc,
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Form(
@@ -38,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                EmailWidget(passwordFocusNode: passwordFocusNode),
+                EmailWidget(emailFocusNode: emailFocusNode),
                 const SizedBox(height: 20),
                 PasswordWidget(passwordFocusNode: passwordFocusNode),
                 const SizedBox(height: 50),
