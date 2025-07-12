@@ -1,4 +1,4 @@
-import 'package:api_practice/UI/home.dart';
+import 'package:api_practice/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
