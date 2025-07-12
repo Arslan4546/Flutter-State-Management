@@ -4,7 +4,7 @@ part 'movies_model.freezed.dart';
 part 'movies_model.g.dart';
 
 @freezed
-class MoviesModel with _$MoviesModel {
+abstract class MoviesModel with _$MoviesModel {
   const factory MoviesModel({
     @Default(0) int total,
     @Default(0) int page,
@@ -12,12 +12,13 @@ class MoviesModel with _$MoviesModel {
     @Default([]) @JsonKey(name: 'tv_shows') List<TvShows> tvShow,
   }) = _MoviesModel;
 
+  /// JSON deserialization
   factory MoviesModel.fromJson(Map<String, dynamic> json) =>
       _$MoviesModelFromJson(json);
 }
 
 @freezed
-class TvShows with _$TvShows {
+abstract class TvShows with _$TvShows {
   const factory TvShows({
     @JsonKey(name: 'name') @Default('') String name,
     @Default('') String permalink,
@@ -29,6 +30,7 @@ class TvShows with _$TvShows {
     @Default('') String status,
   }) = _TvShows;
 
+  /// JSON deserialization
   factory TvShows.fromJson(Map<String, dynamic> json) =>
       _$TvShowsFromJson(json);
 }
