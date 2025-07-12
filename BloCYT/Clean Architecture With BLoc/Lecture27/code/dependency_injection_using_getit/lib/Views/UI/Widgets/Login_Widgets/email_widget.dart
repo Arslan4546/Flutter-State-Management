@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_bloc.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_event.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_states.dart';
-import 'package:splash_screen_practice/Utils/Validations/validations.dart';
+import 'package:splash_screen_practice/Repositories/Utils/Validations/validations.dart';
 
 class EmailWidget extends StatelessWidget {
   final FocusNode emailFocusNode;

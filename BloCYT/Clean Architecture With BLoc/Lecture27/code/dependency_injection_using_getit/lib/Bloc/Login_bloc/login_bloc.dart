@@ -7,8 +7,8 @@ import 'package:splash_screen_practice/Repositories/Login_Repositories/login_rep
 import 'package:splash_screen_practice/Repositories/Utils/Enums/enum.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginStates> {
-  final LoginRepo _loginRepo = LoginRepo();
-  LoginBloc() : super(const LoginStates()) {
+  final LoginRepo loginRepo;
+  LoginBloc({required this.loginRepo}) : super(const LoginStates()) {
     on<EmailEvent>(_emailBlocFun);
     on<PasswordEvent>(_passwordBlocFun);
     on<SubmitButtonEvent>(_loginFun);
@@ -30,7 +30,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginStates> {
 
     emit(state.copyWith(apiStatus: APIStatus.loading));
 
-    await _loginRepo
+    await loginRepo
         .loginAPI(data)
         .then((value) {
           if (value.error.isEmpty) {

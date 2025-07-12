@@ -4,6 +4,7 @@ import 'package:splash_screen_practice/Bloc/Login_bloc/login_bloc.dart';
 import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/email_widget.dart';
 import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/login_button_widget.dart';
 import 'package:splash_screen_practice/Views/UI/Widgets/Login_Widgets/password_widget.dart';
+import 'package:splash_screen_practice/main.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -21,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   late LoginBloc _loginBloc;
   @override
   void initState() {
-    _loginBloc = LoginBloc();
+    _loginBloc = LoginBloc(loginRepo: getIt());
     super.initState();
   }
 

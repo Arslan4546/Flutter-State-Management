@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// phly base class do and then phir jo required hai mock ya http wali then wo do
 void serviceLocator() {
-  getIt.registerLazySingleton<LoginRepoMock>(() => LoginRepoMock());
+  getIt.registerLazySingleton<LoginRepo>(() => LoginRepoMock());
 }
