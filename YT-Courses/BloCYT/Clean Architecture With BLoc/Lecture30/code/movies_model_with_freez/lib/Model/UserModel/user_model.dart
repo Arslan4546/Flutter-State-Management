@@ -3,7 +3,7 @@ part "user_model.freezed.dart";
 part "user_model.g.dart";
 
 @freezed
-abstract class UserModel with _$UserModel {
+class UserModel with _$UserModel {
   factory UserModel({
     @Default("") @JsonKey(name: "token") String token,
     @Default("") @JsonKey(name: "error") String error,

@@ -15,10 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MoviesModel {
 
- int get total;// Total number of movies
- int get page;// Current page number
- int get pages;// Total number of pages
-@JsonKey(name: 'tv_shows') List<TvShows> get tvShow;
+ int get total; int get page; int get pages;@JsonKey(name: 'tv_shows') List<TvShows> get tvShow;
 /// Create a copy of MoviesModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -47,7 +44,7 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class $MoviesModelCopyWith<$Res> implements $MoviesModelCopyWith<$Res> {
+abstract mixin class $MoviesModelCopyWith<$Res>  {
   factory $MoviesModelCopyWith(MoviesModel value, $Res Function(MoviesModel) _then) = _$MoviesModelCopyWithImpl;
 @useResult
 $Res call({
@@ -95,10 +92,10 @@ extension MoviesModelPatterns on MoviesModel {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( MoviesModel value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MoviesModel value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case MoviesModel() when $default != null:
+case _MoviesModel() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -117,10 +114,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( MoviesModel value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MoviesModel value)  $default,){
 final _that = this;
 switch (_that) {
-case MoviesModel():
+case _MoviesModel():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -138,10 +135,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( MoviesModel value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MoviesModel value)?  $default,){
 final _that = this;
 switch (_that) {
-case MoviesModel() when $default != null:
+case _MoviesModel() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -161,7 +158,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case MoviesModel() when $default != null:
+case _MoviesModel() when $default != null:
 return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
   return orElse();
 
@@ -182,7 +179,7 @@ return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)  $default,) {final _that = this;
 switch (_that) {
-case MoviesModel():
+case _MoviesModel():
 return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
   throw StateError('Unexpected subclass');
 
@@ -202,7 +199,7 @@ return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int total,  int page,  int pages, @JsonKey(name: 'tv_shows')  List<TvShows> tvShow)?  $default,) {final _that = this;
 switch (_that) {
-case MoviesModel() when $default != null:
+case _MoviesModel() when $default != null:
 return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
   return null;
 
@@ -211,17 +208,92 @@ return $default(_that.total,_that.page,_that.pages,_that.tvShow);case _:
 
 }
 
+/// @nodoc
+@JsonSerializable()
+
+class _MoviesModel implements MoviesModel {
+  const _MoviesModel({this.total = 0, this.page = 0, this.pages = 0, @JsonKey(name: 'tv_shows') final  List<TvShows> tvShow = const []}): _tvShow = tvShow;
+  factory _MoviesModel.fromJson(Map<String, dynamic> json) => _$MoviesModelFromJson(json);
+
+@override@JsonKey() final  int total;
+@override@JsonKey() final  int page;
+@override@JsonKey() final  int pages;
+ final  List<TvShows> _tvShow;
+@override@JsonKey(name: 'tv_shows') List<TvShows> get tvShow {
+  if (_tvShow is EqualUnmodifiableListView) return _tvShow;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_tvShow);
+}
+
+
+/// Create a copy of MoviesModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$MoviesModelCopyWith<_MoviesModel> get copyWith => __$MoviesModelCopyWithImpl<_MoviesModel>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$MoviesModelToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MoviesModel&&(identical(other.total, total) || other.total == total)&&(identical(other.page, page) || other.page == page)&&(identical(other.pages, pages) || other.pages == pages)&&const DeepCollectionEquality().equals(other._tvShow, _tvShow));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,total,page,pages,const DeepCollectionEquality().hash(_tvShow));
+
+@override
+String toString() {
+  return 'MoviesModel(total: $total, page: $page, pages: $pages, tvShow: $tvShow)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$MoviesModelCopyWith<$Res> implements $MoviesModelCopyWith<$Res> {
+  factory _$MoviesModelCopyWith(_MoviesModel value, $Res Function(_MoviesModel) _then) = __$MoviesModelCopyWithImpl;
+@override @useResult
+$Res call({
+ int total, int page, int pages,@JsonKey(name: 'tv_shows') List<TvShows> tvShow
+});
+
+
+
+
+}
+/// @nodoc
+class __$MoviesModelCopyWithImpl<$Res>
+    implements _$MoviesModelCopyWith<$Res> {
+  __$MoviesModelCopyWithImpl(this._self, this._then);
+
+  final _MoviesModel _self;
+  final $Res Function(_MoviesModel) _then;
+
+/// Create a copy of MoviesModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? total = null,Object? page = null,Object? pages = null,Object? tvShow = null,}) {
+  return _then(_MoviesModel(
+total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
+as int,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int,pages: null == pages ? _self.pages : pages // ignore: cast_nullable_to_non_nullable
+as int,tvShow: null == tvShow ? _self._tvShow : tvShow // ignore: cast_nullable_to_non_nullable
+as List<TvShows>,
+  ));
+}
+
+
+}
 
 
 /// @nodoc
 mixin _$TvShows {
 
-@JsonKey(name: 'name') String get name;// Name of the TV show
- String get permalink;// Permalink of the TV show
- String get endDate;// End date of the TV show
- String get network;// Network of the TV show
- String get imageThumbnailPath;// Image thumbnail path of the TV show
- String get status;
+@JsonKey(name: 'name') String get name; String get permalink; String get endDate; String get network;@JsonKey(name: 'image_thumbnail_path') String get imageThumbnailPath; String get status;
 /// Create a copy of TvShows
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -254,7 +326,7 @@ abstract mixin class $TvShowsCopyWith<$Res>  {
   factory $TvShowsCopyWith(TvShows value, $Res Function(TvShows) _then) = _$TvShowsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'name') String name, String permalink, String endDate, String network, String imageThumbnailPath, String status
+@JsonKey(name: 'name') String name, String permalink, String endDate, String network,@JsonKey(name: 'image_thumbnail_path') String imageThumbnailPath, String status
 });
 
 
@@ -364,7 +436,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'name')  String name,  String permalink,  String endDate,  String network,  String imageThumbnailPath,  String status)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'name')  String name,  String permalink,  String endDate,  String network, @JsonKey(name: 'image_thumbnail_path')  String imageThumbnailPath,  String status)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TvShows() when $default != null:
 return $default(_that.name,_that.permalink,_that.endDate,_that.network,_that.imageThumbnailPath,_that.status);case _:
@@ -385,7 +457,7 @@ return $default(_that.name,_that.permalink,_that.endDate,_that.network,_that.ima
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'name')  String name,  String permalink,  String endDate,  String network,  String imageThumbnailPath,  String status)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'name')  String name,  String permalink,  String endDate,  String network, @JsonKey(name: 'image_thumbnail_path')  String imageThumbnailPath,  String status)  $default,) {final _that = this;
 switch (_that) {
 case _TvShows():
 return $default(_that.name,_that.permalink,_that.endDate,_that.network,_that.imageThumbnailPath,_that.status);case _:
@@ -405,7 +477,7 @@ return $default(_that.name,_that.permalink,_that.endDate,_that.network,_that.ima
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'name')  String name,  String permalink,  String endDate,  String network,  String imageThumbnailPath,  String status)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'name')  String name,  String permalink,  String endDate,  String network, @JsonKey(name: 'image_thumbnail_path')  String imageThumbnailPath,  String status)?  $default,) {final _that = this;
 switch (_that) {
 case _TvShows() when $default != null:
 return $default(_that.name,_that.permalink,_that.endDate,_that.network,_that.imageThumbnailPath,_that.status);case _:
@@ -420,19 +492,14 @@ return $default(_that.name,_that.permalink,_that.endDate,_that.network,_that.ima
 @JsonSerializable()
 
 class _TvShows implements TvShows {
-   _TvShows({@JsonKey(name: 'name') this.name = '', this.permalink = '', this.endDate = '', this.network = '', this.imageThumbnailPath = '', this.status = ''});
+  const _TvShows({@JsonKey(name: 'name') this.name = '', this.permalink = '', this.endDate = '', this.network = '', @JsonKey(name: 'image_thumbnail_path') this.imageThumbnailPath = '', this.status = ''});
   factory _TvShows.fromJson(Map<String, dynamic> json) => _$TvShowsFromJson(json);
 
 @override@JsonKey(name: 'name') final  String name;
-// Name of the TV show
 @override@JsonKey() final  String permalink;
-// Permalink of the TV show
 @override@JsonKey() final  String endDate;
-// End date of the TV show
 @override@JsonKey() final  String network;
-// Network of the TV show
-@override@JsonKey() final  String imageThumbnailPath;
-// Image thumbnail path of the TV show
+@override@JsonKey(name: 'image_thumbnail_path') final  String imageThumbnailPath;
 @override@JsonKey() final  String status;
 
 /// Create a copy of TvShows
@@ -468,7 +535,7 @@ abstract mixin class _$TvShowsCopyWith<$Res> implements $TvShowsCopyWith<$Res> {
   factory _$TvShowsCopyWith(_TvShows value, $Res Function(_TvShows) _then) = __$TvShowsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'name') String name, String permalink, String endDate, String network, String imageThumbnailPath, String status
+@JsonKey(name: 'name') String name, String permalink, String endDate, String network,@JsonKey(name: 'image_thumbnail_path') String imageThumbnailPath, String status
 });
 
 

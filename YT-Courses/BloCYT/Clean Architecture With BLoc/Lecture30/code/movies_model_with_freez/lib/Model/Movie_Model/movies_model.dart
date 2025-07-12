@@ -1,40 +1,34 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'movies_model.freezed.dart';
 part 'movies_model.g.dart';
 
-/// Freezed class representing a list of movies.
 @freezed
 class MoviesModel with _$MoviesModel {
-  /// Factory constructor for creating a [MoviesModel] instance.
-  factory MoviesModel({
-    @Default(0) int total, // Total number of movies
-    @Default(0) int page, // Current page number
-    @Default(0) int pages, // Total number of pages
-    @Default([])
-    @JsonKey(name: 'tv_shows')
-    List<TvShows> tvShow, // List of TV shows
-  }) = MoviesModel; // Constructor for the freezed class
+  const factory MoviesModel({
+    @Default(0) int total,
+    @Default(0) int page,
+    @Default(0) int pages,
+    @Default([]) @JsonKey(name: 'tv_shows') List<TvShows> tvShow,
+  }) = _MoviesModel;
 
-  /// Factory constructor for creating a [MoviesModel] instance from JSON.
   factory MoviesModel.fromJson(Map<String, dynamic> json) =>
-      _$MoviesModelFromJson(json); // JSON deserialization method
+      _$MoviesModelFromJson(json);
 }
 
-/// Freezed class representing a TV show.
 @freezed
-abstract class TvShows with _$TvShows {
-  /// Factory constructor for creating a [TvShows] instance.
-  factory TvShows({
-    @JsonKey(name: 'name') @Default('') String name, // Name of the TV show
-    @Default('') String permalink, // Permalink of the TV show
-    @Default('') String endDate, // End date of the TV show
-    @Default('') String network, // Network of the TV show
+class TvShows with _$TvShows {
+  const factory TvShows({
+    @JsonKey(name: 'name') @Default('') String name,
+    @Default('') String permalink,
+    @Default('') String endDate,
+    @Default('') String network,
+    @JsonKey(name: 'image_thumbnail_path')
     @Default('')
-    String imageThumbnailPath, // Image thumbnail path of the TV show
-    @Default('') String status, // Status of the TV show
-  }) = _TvShows; // Constructor for the freezed class
+    String imageThumbnailPath,
+    @Default('') String status,
+  }) = _TvShows;
 
-  /// Factory constructor for creating a [TvShows] instance from JSON.
   factory TvShows.fromJson(Map<String, dynamic> json) =>
-      _$TvShowsFromJson(json); // JSON deserialization method
+      _$TvShowsFromJson(json);
 }
