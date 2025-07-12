@@ -1,0 +1,3 @@
+--> In this lecture we will learn how to use singelton pattren
+and manage the use session accordingly.
+ 
