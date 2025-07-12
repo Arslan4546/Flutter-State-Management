@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: RouteNames.loginScreen,
+      initialRoute: RouteNames.splashScreen,
       onGenerateRoute: Routes.generateRoute,
     );
   }

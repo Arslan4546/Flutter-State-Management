@@ -19,6 +19,7 @@ class LoginButtonWidget extends StatelessWidget {
       listener: (context, state) {
         if (state.apiStatus == APIStatus.success) {
           FlushBarHelper.flushBarSuccess("Login Successful", context);
+          Navigator.pushNamed(context, RouteNames.homeScreen);
         } else if (state.apiStatus == APIStatus.failed) {
           FlushBarHelper.flushBarSuccess("Login Failed", context);
         }
@@ -31,7 +32,6 @@ class LoginButtonWidget extends StatelessWidget {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 context.read<LoginBloc>().add(SubmitButtonEvent());
-                Navigator.pushNamed(context, RouteNames.homeScreen);
               }
             },
             child: state.apiStatus == APIStatus.loading
