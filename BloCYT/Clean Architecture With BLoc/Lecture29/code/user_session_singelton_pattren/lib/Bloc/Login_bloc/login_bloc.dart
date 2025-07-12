@@ -5,6 +5,7 @@ import 'package:splash_screen_practice/Bloc/Login_bloc/login_event.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_states.dart';
 import 'package:splash_screen_practice/Repositories/Login_Repositories/login_repo.dart';
 import 'package:splash_screen_practice/Repositories/Utils/Enums/enum.dart';
+import 'package:splash_screen_practice/Services/Session_Manager/session_controller.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginStates> {
   final LoginRepo loginRepo;
@@ -40,6 +41,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginStates> {
                 errorMessage: "Login Successfully",
               ),
             );
+
+            SessionController().saveUserInPreference(value);
+            SessionController().getUserFromPreference();
           } else {
             emit(
               state.copyWith(

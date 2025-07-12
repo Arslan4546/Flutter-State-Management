@@ -6,7 +6,7 @@ import 'package:splash_screen_practice/Services/Storage/app_local_storage.dart';
 
 class SessionController {
   /// Instance of [LocalStorage] for accessing local storage.
-  final AppLocalStorage sharedPreferenceClass = AppLocalStorage();
+  final AppLocalStorage localStorage = AppLocalStorage();
 
   /// Singleton instance of [SessionController].
   static final SessionController _session = SessionController._internal();
@@ -37,9 +37,9 @@ class SessionController {
   ///
   /// Takes a [user] object as input and saves it into the local storage.
   Future<void> saveUserInPreference(dynamic user) async {
-    sharedPreferenceClass.setValue('token', jsonEncode(user));
+    localStorage.setValue('token', jsonEncode(user));
     // Storing value to check login
-    sharedPreferenceClass.setValue('isLogin', 'true');
+    localStorage.setValue('isLogin', 'true');
   }
 
   /// Retrieves user data from the local storage.
@@ -48,8 +48,8 @@ class SessionController {
   /// to be used across the app.
   Future<void> getUserFromPreference() async {
     try {
-      String userData = await sharedPreferenceClass.getValue('token');
-      var isLogin = await sharedPreferenceClass.getValue('isLogin');
+      String userData = await localStorage.getValue('token');
+      var isLogin = await localStorage.getValue('isLogin');
 
       if (userData.isNotEmpty) {
         SessionController.user = UserModel.fromJson(jsonDecode(userData));

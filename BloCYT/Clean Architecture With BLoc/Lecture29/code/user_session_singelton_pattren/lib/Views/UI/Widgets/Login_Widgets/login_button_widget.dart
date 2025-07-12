@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_bloc.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_event.dart';
 import 'package:splash_screen_practice/Bloc/Login_bloc/login_states.dart';
+import 'package:splash_screen_practice/Configs/Routes/route_names.dart';
 import 'package:splash_screen_practice/Repositories/Utils/Enums/enum.dart';
 import 'package:splash_screen_practice/Repositories/Utils/Flush_Bar/flush_bar_helper.dart';
 
@@ -30,6 +31,7 @@ class LoginButtonWidget extends StatelessWidget {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 context.read<LoginBloc>().add(SubmitButtonEvent());
+                Navigator.pushNamed(context, RouteNames.homeScreen);
               }
             },
             child: state.apiStatus == APIStatus.loading
