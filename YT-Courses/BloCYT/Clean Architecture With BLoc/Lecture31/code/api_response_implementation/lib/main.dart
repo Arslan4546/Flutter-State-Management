@@ -4,6 +4,7 @@ import 'package:splash_screen_practice/Configs/Routes/route_names.dart';
 import 'package:splash_screen_practice/Configs/Routes/routes.dart';
 import 'package:splash_screen_practice/Repositories/Login_Repositories/http_request.dart';
 import 'package:splash_screen_practice/Repositories/Login_Repositories/login_repo.dart';
+import 'package:splash_screen_practice/Repositories/Login_Repositories/mock_request.dart';
 import 'package:splash_screen_practice/Repositories/Movie_Repositories/movie_http_request.dart';
 import 'package:splash_screen_practice/Repositories/Movie_Repositories/movie_repository.dart';
 
@@ -31,6 +32,6 @@ class MyApp extends StatelessWidget {
 
 // phly base class do and then phir jo required hai mock ya http wali then wo do
 void serviceLocator() {
-  getIt.registerLazySingleton<LoginRepo>(() => LoginRepoHttp());
+  getIt.registerLazySingleton<LoginRepo>(() => LoginRepoMock());
   getIt.registerLazySingleton<MovieRepo>(() => MovieHttpRepo());
 }

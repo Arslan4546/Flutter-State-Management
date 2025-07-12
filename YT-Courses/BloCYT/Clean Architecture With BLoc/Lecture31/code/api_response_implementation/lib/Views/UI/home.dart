@@ -7,7 +7,6 @@ import 'package:splash_screen_practice/Bloc/Movie_Bloc/movie_events.dart';
 import 'package:splash_screen_practice/Bloc/Movie_Bloc/movie_states.dart';
 import 'package:splash_screen_practice/Configs/Routes/route_names.dart';
 import 'package:splash_screen_practice/Data/Response/api_response.dart';
-import 'package:splash_screen_practice/Repositories/Movie_Repositories/movie_repository.dart';
 import 'package:splash_screen_practice/Services/Storage/app_local_storage.dart';
 import 'package:splash_screen_practice/main.dart';
 
