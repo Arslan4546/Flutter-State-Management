@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:splash_screen_practice/Configs/Routes/route_names.dart';
 import 'package:splash_screen_practice/Configs/Routes/routes.dart';
-import 'package:splash_screen_practice/Repositories/Login_Repositories/http_request.dart';
+
 import 'package:splash_screen_practice/Repositories/Login_Repositories/login_repo.dart';
 import 'package:splash_screen_practice/Repositories/Login_Repositories/mock_request.dart';
 import 'package:splash_screen_practice/Repositories/Movie_Repositories/movie_http_request.dart';
