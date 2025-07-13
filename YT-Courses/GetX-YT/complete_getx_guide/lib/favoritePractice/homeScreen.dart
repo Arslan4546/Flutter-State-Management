@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _TestingscreenState extends State<HomeScreen> {
-  Favoritecontroller favoritecontroller = Get.put(Favoritecontroller());
+  Favoritecontroller list = Get.put(Favoritecontroller());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,28 +23,26 @@ class _TestingscreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: favoritecontroller.fruitList.length,
+        itemCount: list.fruitList.length,
         itemBuilder: (context, index) {
           return Card(
             child: ListTile(
                 onTap: () {
-                  if (favoritecontroller.tempList.contains(
-                      favoritecontroller.fruitList[index].toString())) {
-                    favoritecontroller.removeController(
-                        favoritecontroller.fruitList[index].toString());
+                  if (list.tempList
+                      .contains(list.fruitList[index].toString())) {
+                    list.removeController(list.fruitList[index].toString());
                   } else {
-                    favoritecontroller.addController(
-                        favoritecontroller.fruitList[index].toString());
+                    list.addController(list.fruitList[index].toString());
                   }
                 },
-                title: Text(favoritecontroller.fruitList[index].toString()),
+                title: Text(list.fruitList[index].toString()),
                 trailing: Obx(
                   () => Icon(
                     Icons.favorite,
-                    color: favoritecontroller.tempList.contains(
-                            favoritecontroller.fruitList[index].toString())
-                        ? Colors.red
-                        : Colors.white,
+                    color:
+                        list.tempList.contains(list.fruitList[index].toString())
+                            ? Colors.red
+                            : Colors.white,
                   ),
                 )),
           );
