@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:getxdemo/LanguageTranslation/eng&urdu.dart';
+import 'package:getxdemo/LanguageTranslation/languages.dart';
 import 'package:getxdemo/expampletwo/TestingScreen.dart';
 import 'package:getxdemo/favoritePractice/homeScreen.dart';
 
@@ -37,8 +39,8 @@ class _MyAppState extends State<MyApp> {
       //locale: const Locale("en", "US"),
       locale: const Locale("en", "US"),
       fallbackLocale: const Locale("en", "US"),
-      translations: Translate(),
-      home: const HeightWidth(),
+      translations: Languages(),
+      home: const trans(),
       // getPages: [
       //   GetPage(name: "/S1", page: () => const Screen1()),
       //   GetPage(name: "/S2", page: () => Screen2()),
