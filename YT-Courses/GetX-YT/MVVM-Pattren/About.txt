@@ -1,0 +1,34 @@
+--> This is the text about understanding the MVVM Architecture.
+==> Data 
+ye folder bohat important hai iss folder mai tmama server side cheezain
+handle ki jaty hain jesy app exception, 
+reponse etc or kesy http ko interlink kryn
+gy app exception k sath
+ 
+==> View
+iss mai sara UI k files hoti hain different
+ screens ki 
+
+==> View Model
+iss mai humm jitny bhi ui k model hoty hain
+like ager hum login api implement
+kr rhy hain uss ka backend ka code sara
+view model
+mai likha jata hai 
+
+==> Models
+iss mai humm kissi bhi data ko parse krny
+k lyee
+use krty hain like API's wagera 
+
+
+==> Resouces 
+iss foler mai humm app k resouce ko mange
+krty hain like app colors,string ,fonts etc
+
+==>Utils
+iss folder mai humm sary utils ko handle krty
+jesy toast messages snackBar, bottom Bar 
+etc.mtlab proper pattrens mai notification
+or ui mai behtreen kr k show krvana ui mai 
+wo sary iss mia banaty hain humm.
