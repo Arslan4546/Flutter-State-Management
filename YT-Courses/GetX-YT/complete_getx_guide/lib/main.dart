@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
       locale: const Locale("en", "US"),
       fallbackLocale: const Locale("en", "US"),
       translations: Languages(),
-      home: const HomeScreen(),
+      home: const home1(),
       // getPages: [
       //   GetPage(name: "/S1", page: () => const Screen1()),
       //   GetPage(name: "/S2", page: () => Screen2()),
