@@ -6,8 +6,6 @@ import 'package:get/get.dart';
 import 'package:getxdemo/loginApiPractice/loginController.dart';
 import 'package:image_picker/image_picker.dart';
 
-
-
 class mainScreen extends StatefulWidget {
   const mainScreen({super.key});
 
@@ -16,18 +14,17 @@ class mainScreen extends StatefulWidget {
 }
 
 class _mainScreenState extends State<mainScreen> {
-
   Logincontroller controller = Get.put(Logincontroller());
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.red,
-          title: const Text("Login API Practice",style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-          ),),
+          title: const Text(
+            "Login API Practice",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
           centerTitle: true,
         ),
         body: Padding(
@@ -42,35 +39,39 @@ class _mainScreenState extends State<mainScreen> {
                   hintText: "Email",
                 ),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               TextFormField(
                 controller: controller.passwordController.value,
                 decoration: const InputDecoration(
                   hintText: "Password",
                 ),
               ),
-              SizedBox(height: 20,),
-              Obx((){
+              SizedBox(
+                height: 20,
+              ),
+              Obx(() {
                 return InkWell(
-                  onTap: (){
-         controller.getLogin();
+                  onTap: () {
+                    controller.getLogin();
                   },
-                  child:controller.loading.value ? const CircularProgressIndicator() : Container(
-                    height: 45,
-                    color: Colors.red,
-                    child: const Center(
-                    child: Text(
-                    "Login",style: TextStyle(
-                      color: Colors.white
-                    ),
-                  ),
-                ),
-                ),
+                  child: controller.loading.value
+                      ? const CircularProgressIndicator()
+                      : Container(
+                          height: 45,
+                          color: Colors.red,
+                          child: const Center(
+                            child: Text(
+                              "Login",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
                 );
               })
             ],
           ),
-        )
-    );
+        ));
   }
 }
