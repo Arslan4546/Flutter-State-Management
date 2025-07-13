@@ -47,8 +47,6 @@ class _HomeState extends State<HomeScreen> {
       body: BlocProvider(
         create: (_) => _movieBloc..add(MoviesFetchEvent()),
         child: BlocBuilder<MovieBloc, MovieStates>(
-          buildWhen: (previous, current) =>
-              previous.moviesList != current.moviesList,
           builder: (BuildContext context, state) {
             switch (state.moviesList.apiStatus) {
               case ApiResponse.loading:
