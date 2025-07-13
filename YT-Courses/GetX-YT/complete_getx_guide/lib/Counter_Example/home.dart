@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/IntroStateManagement/counterCountrol.dart';
+import 'package:getxdemo/Counter_Example/counterCountrol.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,35 +10,34 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   final Countercountrol controller = Get.put(Countercountrol());
-
-
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text("State Management Practice",style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-        ),),
+        title: const Text(
+          "State Management Practice",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: Center(
-        child: Obx(()=> Text(controller.counter.toString(),style: const TextStyle(
-          fontSize: 60,
-        ),),),
-
+        child: Obx(
+          () => Text(
+            controller.counter.toString(),
+            style: const TextStyle(
+              fontSize: 60,
+            ),
+          ),
+        ),
       ),
-      floatingActionButton:  FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.cCountrol();
+          controller.count();
         },
-
       ),
-      );
-
+    );
   }
 }
