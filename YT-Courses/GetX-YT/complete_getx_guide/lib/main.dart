@@ -32,19 +32,19 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       //locale: const Locale("en", "US"),
-      // locale: const Locale("en", "US"),
-      // fallbackLocale: const Locale("en", "US"),
-      // translations: Translate(),
-      home: LightDarkTheme(),
-      // getPages: [
-      //   GetPage(name: "/S1", page:() => const Screen1()),
-      //   GetPage(name: "/S2", page:() => Screen2()),
-      // ],
+      locale: const Locale("en", "US"),
+      fallbackLocale: const Locale("en", "US"),
+      translations: Translate(),
+      home: const Screen1(),
+      getPages: [
+        GetPage(name: "/S1", page: () => const Screen1()),
+        GetPage(name: "/S2", page: () => Screen2()),
+      ],
 
-      // getPages: AppRoutes.appRoutes(),
+      //getPages: AppRoutes.appRoutes(),
     );
   }
 }

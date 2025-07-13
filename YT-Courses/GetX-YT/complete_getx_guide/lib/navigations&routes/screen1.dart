@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class Screen1 extends StatefulWidget {
   const Screen1({super.key});
 
@@ -15,10 +14,10 @@ class _Screen1State extends State<Screen1> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text("Screen 1",style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-        ),),
+        title: const Text(
+          "Screen 1",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -26,17 +25,16 @@ class _Screen1State extends State<Screen1> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextButton(onPressed: (){
-
-              // Navigator.push(context,MaterialPageRoute(builder: (context)=> const Screen2()));
-              //Get.to(const Screen2(name: "Arslan Tariq",));
-                Get.toNamed("/S2",arguments: [
-                  "Hannan Tariq",
-                  "Mannan Tariq",
-                ] );
-
-            }, child:
-            const Text("Go To Screen 2"))
+            TextButton(
+                onPressed: () {
+                  // Navigator.push(context,MaterialPageRoute(builder: (context)=> const Screen2()));
+                  //Get.to(const Screen2(name: "Arslan Tariq",));
+                  Get.toNamed("/S2", arguments: [
+                    "Hannan Tariq",
+                    "Mannan Tariq",
+                  ]);
+                },
+                child: const Text("Go To Screen 2"))
           ],
         ),
       ),
