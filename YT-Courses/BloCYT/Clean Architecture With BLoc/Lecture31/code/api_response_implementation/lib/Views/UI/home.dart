@@ -64,27 +64,29 @@ class _HomeState extends State<HomeScreen> {
                 }
                 final movieList = state.moviesList.data!;
 
-                return ListView.builder(
-                  itemCount: movieList.tvShow.length,
-                  itemBuilder: (context, index) {
-                    final tvShow = movieList.tvShow[index];
-                    return Card(
-                      child: ListTile(
-                        leading: Image.network(
-                          tvShow.imageThumbnailPath.toString(),
-                        ), // Widget for displaying network image
-                        title: Text(
-                          tvShow.name.toString(),
-                        ), // Title of the movie
-                        subtitle: Text(
-                          tvShow.network.toString(),
-                        ), // Network of the movie
-                        trailing: Text(
-                          tvShow.status.toString(),
-                        ), // Status of the movie
-                      ),
-                    );
-                  },
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: movieList.tvShow.length,
+                    itemBuilder: (context, index) {
+                      final tvShow = movieList.tvShow[index];
+                      return Card(
+                        child: ListTile(
+                          leading: Image.network(
+                            tvShow.imageThumbnailPath.toString(),
+                          ), // Widget for displaying network image
+                          title: Text(
+                            tvShow.name.toString(),
+                          ), // Title of the movie
+                          subtitle: Text(
+                            tvShow.network.toString(),
+                          ), // Network of the movie
+                          trailing: Text(
+                            tvShow.status.toString(),
+                          ), // Status of the movie
+                        ),
+                      );
+                    },
+                  ),
                 );
               default:
                 return const SizedBox();
