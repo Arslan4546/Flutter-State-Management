@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:getxdemo/MVMM_Practice/View/home/home.dart';
 import 'package:getxdemo/without_mvvm/LanguageTranslation/eng&urdu.dart';
 import 'package:getxdemo/without_mvvm/LanguageTranslation/languages.dart';
 import 'package:getxdemo/without_mvvm/expampletwo/TestingScreen.dart';
@@ -36,6 +37,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      home: HomeScreenAPI(),
       //locale: const Locale("en", "US"),
       // locale: const Locale("en", "US"),
       // fallbackLocale: const Locale("en", "US"),
@@ -46,7 +48,7 @@ class _MyAppState extends State<MyApp> {
       //   GetPage(name: "/S2", page: () => Screen2()),
       // ],
 
-      getPages: AppRoutes.appRoutes(),
+      // getPages: AppRoutes.appRoutes(),
     );
   }
 }

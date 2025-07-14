@@ -5,8 +5,9 @@ import '../Data/Networks/networkAPI_Services.dart';
 
 class HomeRepository {
   final _apiService = NetworkApiServices();
-  Future<UserModel> UserAPI() async {
+  Future<UserModel> userAPI() async {
     dynamic response = await _apiService.getAPI(AppUrls.userModel);
+    print(response);
     return UserModel.fromJson(response);
   }
 }

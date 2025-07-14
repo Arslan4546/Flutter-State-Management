@@ -23,7 +23,9 @@ class _SplashSState extends State<SplashS> {
         ),
         centerTitle: true,
       ),
-      body: InternetExceptionWidget(onPressed: () {}),
+      body: InternetExceptionWidget(
+        onPressed: () {},
+      ),
     );
   }
 }
