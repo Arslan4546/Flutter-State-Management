@@ -90,6 +90,7 @@ class _LoginViewState extends State<LoginView> {
                 title: "Login",
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    loginVM.login();
                   } else {}
                 })
           ],

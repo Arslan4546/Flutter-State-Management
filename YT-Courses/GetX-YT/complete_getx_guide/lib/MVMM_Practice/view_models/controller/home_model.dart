@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:getxdemo/mvvm_practice/models/Login_Model/user_model.dart';
-import 'package:getxdemo/mvvm_practice/repository/home_repository.dart';
+import 'package:getxdemo/mvvm_practice/models/User_Model/user_list_model.dart';
+import 'package:getxdemo/mvvm_practice/repository/home_repo.dart';
 
-import '../../data/Response/status.dart';
+import '../../Data/Response/status.dart';
 
 class HomeController extends GetxController {
   final _api = HomeRepository();
@@ -18,7 +18,7 @@ class HomeController extends GetxController {
   void getAPI() {
     _api.UserAPI().then((value) {
       setRxRequestStatus(Status.COMPLETE);
-      setUserList(value);
+      setUserList(value as UserModel);
     }).onError((error, StackTrace) {
       setRxRequestStatus(Status.ERROR);
       setError(error.toString());

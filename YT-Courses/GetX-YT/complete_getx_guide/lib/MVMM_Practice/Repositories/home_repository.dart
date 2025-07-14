@@ -1,7 +1,7 @@
-import 'package:getxdemo/mvvm_practice/models/Login_Model/user_model.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Urls/app_urls.dart';
+import 'package:getxdemo/MVMM_Practice/Resources/App_Urls/app_urls.dart';
+import 'package:getxdemo/mvvm_practice/models/User_Model/user_list_model.dart';
 
-import '../data/Networks/networkAPI_Services.dart';
+import '../Data/Networks/networkAPI_Services.dart';
 
 class HomeRepository {
   final _apiService = NetworkApiServices();

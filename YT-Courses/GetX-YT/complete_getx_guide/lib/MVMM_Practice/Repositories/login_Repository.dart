@@ -1,5 +1,5 @@
-import 'package:getxdemo/mvvm_practice/data/Networks/networkAPI_Services.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Urls/app_urls.dart';
+import 'package:getxdemo/MVMM_Practice/Data/Networks/networkAPI_Services.dart';
+import 'package:getxdemo/MVMM_Practice/Resources/App_Urls/app_urls.dart';
 
 class LoginRepository {
   final _apiService = NetworkApiServices();

@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:getxdemo/mvvm_practice/Repositories/login_Repository.dart';
 import 'package:getxdemo/without_mvvm/favoritePractice/homeScreen.dart';
-import 'package:getxdemo/mvvm_practice/models/Login_Model/user_model.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Routes/routes.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Routes/routes_names.dart';
-import 'package:getxdemo/mvvm_practice/utils/utils_file.dart';
-import 'package:getxdemo/mvvm_practice/view_models/controller/user_preferences_model.dart';
+import 'package:getxdemo/MVMM_Practice/Models/Login_Model/user_model.dart';
+import 'package:getxdemo/MVMM_Practice/resources/App_Routes/routes.dart';
+import 'package:getxdemo/MVMM_Practice/resources/App_Routes/routes_names.dart';
+import 'package:getxdemo/MVMM_Practice/Utils/utils_file.dart';
+import 'package:getxdemo/MVMM_Practice/view_models/controller/user_preferences_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../repository/login_Repository.dart';
 
 class LoginViewModel extends GetxController {
   UserPreferencesModel userP = UserPreferencesModel();

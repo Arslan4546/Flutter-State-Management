@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:getxdemo/mvvm_practice/models/Login_Model/user_model.dart';
+import 'package:getxdemo/MVMM_Practice/Models/Login_Model/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferencesModel {
