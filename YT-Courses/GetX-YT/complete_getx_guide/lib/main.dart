@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:getxdemo/LanguageTranslation/eng&urdu.dart';
-import 'package:getxdemo/LanguageTranslation/languages.dart';
-import 'package:getxdemo/expampletwo/TestingScreen.dart';
-import 'package:getxdemo/favoritePractice/homeScreen.dart';
+import 'package:getxdemo/without_mvvm/LanguageTranslation/eng&urdu.dart';
+import 'package:getxdemo/without_mvvm/LanguageTranslation/languages.dart';
+import 'package:getxdemo/without_mvvm/expampletwo/TestingScreen.dart';
+import 'package:getxdemo/without_mvvm/favoritePractice/homeScreen.dart';
 
-import 'package:getxdemo/height&widthPractice/height&width.dart';
-import 'package:getxdemo/loginApiPractice/mainScreen.dart';
-import 'Counter_Example/home.dart';
-import 'ThemePractice/dart&lightTheme.dart';
-import 'exampleThree/testScreen.dart';
-import 'imagePickerPractice/homeScreen.dart';
+import 'package:getxdemo/without_mvvm/height&widthPractice/height&width.dart';
+import 'package:getxdemo/without_mvvm/loginApiPractice/mainScreen.dart';
+import 'without_mvvm/Counter_Example/home.dart';
+import 'without_mvvm/ThemePractice/dart&lightTheme.dart';
+import 'without_mvvm/exampleThree/testScreen.dart';
+import 'without_mvvm/imagePickerPractice/homeScreen.dart';
 
 import 'mvvm_practice/resources/App_Routes/routes.dart';
 import 'mvvm_practice/view/Splash.dart';
 import 'mvvm_practice/view/splashS.dart';
 import 'mvvm_practice/view/splash_screen.dart';
-import 'navigations&routes/screen1.dart';
-import 'navigations&routes/screen2.dart';
+import 'without_mvvm/navigations&routes/screen1.dart';
+import 'without_mvvm/navigations&routes/screen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,13 +40,13 @@ class _MyAppState extends State<MyApp> {
       // locale: const Locale("en", "US"),
       // fallbackLocale: const Locale("en", "US"),
       // translations: Languages(),
-      home: const SplashS(),
+
       // getPages: [
       //   GetPage(name: "/S1", page: () => const Screen1()),
       //   GetPage(name: "/S2", page: () => Screen2()),
       // ],
 
-      //getPages: AppRoutes.appRoutes(),
+      getPages: AppRoutes.appRoutes(),
     );
   }
 }

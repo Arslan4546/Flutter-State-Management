@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/Counter_Example/counterCountrol.dart';
+import 'package:getxdemo/without_mvvm/Counter_Example/counterCountrol.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxdemo/mvvm_practice/resources/components/general_button.dart';
 import 'package:getxdemo/mvvm_practice/utils/utils_file.dart';
-import 'package:getxdemo/mvvm_practice/view_models/controller/login/login_view_model.dart';
+import 'package:getxdemo/mvvm_practice/view_models/Login_Model/login_view_model.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/favoritePractice/favoriteController.dart';
+import 'package:getxdemo/without_mvvm/favoritePractice/favoriteController.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

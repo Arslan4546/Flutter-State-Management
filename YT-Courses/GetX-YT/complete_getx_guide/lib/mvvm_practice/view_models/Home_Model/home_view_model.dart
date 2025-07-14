@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:getxdemo/mvvm_practice/models/loginModels/user_model.dart';
 import 'package:getxdemo/mvvm_practice/repository/home_repository/home_repo.dart';
 
-import '../../../data/Response/status.dart';
+import '../../data/Response/status.dart';
 
 class HomeController extends GetxController {
   final _api = HomeRepository();
