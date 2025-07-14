@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:getxdemo/mvvm_practice/models/loginModels/user_model.dart';
+import 'package:getxdemo/mvvm_practice/models/Login_Model/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class userPreference {
+class UserPreferencesModel {
   Future<bool> saveUser(UserModel responseModel) async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     sp.setString("token", responseModel.token.toString());
@@ -10,7 +10,7 @@ class userPreference {
     return true;
   }
 
-  Future<UserModel> GetUser() async {
+  Future<UserModel> getUser() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     String? token = sp.getString("token");
     bool? isLogin = sp.getBool("isLogin");
