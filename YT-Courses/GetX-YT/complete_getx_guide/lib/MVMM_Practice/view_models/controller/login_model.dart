@@ -20,28 +20,29 @@ class LoginViewModel extends GetxController {
   final passwordFocusNode = FocusNode().obs;
   RxBool loading = false.obs;
   void login() {
+    loading.value = true;
     Map data = {
       "email": emailController.value.text,
       "password": passwordController.value.text,
     };
-    loading = true.obs;
 
     _api.loginAPI(data).then((value) {
       if (value["error" == "user not found"]) {
         UtilsClass.snackBar("Login", value["error"]);
-        loading = false.obs;
+        loading.value = false;
       } else {
+        UtilsClass.snackBar("Login", "");
         UserModel userModel = UserModel(
           isLogin: true,
           token: value["token"],
         );
-        loading = false.obs;
+        loading.value = false;
         userP.saveUser(userModel).then((value) {
           Get.toNamed(RoutesNames.homeScreenRoute);
         });
       }
     }).onError((error, StackTrace) {
-      loading = false.obs;
+      loading.value = false;
       UtilsClass.snackBar("Error", error.toString());
     });
   }
