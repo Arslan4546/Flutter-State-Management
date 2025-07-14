@@ -24,7 +24,7 @@ class ServerExceptions extends AppExceptions {
 
 class FetchingDataExceptions extends AppExceptions {
   FetchingDataExceptions([String? message])
-      : super(message, "Error While Fetching Data");
+      : super(message, ": Error While Fetching Data");
 }
 
 class InvalidURLException extends AppExceptions {

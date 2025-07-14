@@ -31,7 +31,6 @@ class LoginViewModel extends GetxController {
         UtilsClass.snackBar("Login", value["error"]);
         loading.value = false;
       } else {
-        UtilsClass.snackBar("Login", "");
         UserModel userModel = UserModel(
           isLogin: true,
           token: value["token"],

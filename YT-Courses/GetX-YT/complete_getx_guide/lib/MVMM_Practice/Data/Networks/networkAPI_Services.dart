@@ -61,10 +61,8 @@ class NetworkApiServices extends BaseApiServices {
       case 200:
         dynamic jsonResponse = jsonDecode(response.body);
         return jsonResponse;
-
       case 400:
         throw InvalidURLException();
-
       default:
         throw FetchingDataExceptions(
             "Error While Fetching Data!${response.statusCode}");
