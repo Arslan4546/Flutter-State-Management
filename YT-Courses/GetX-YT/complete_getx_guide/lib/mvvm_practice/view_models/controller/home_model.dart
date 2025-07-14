@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:getxdemo/mvvm_practice/models/Login_Model/user_model.dart';
-import 'package:getxdemo/mvvm_practice/repository/home_repository/home_repo.dart';
+import 'package:getxdemo/mvvm_practice/repository/home_repository.dart';
 
 import '../../data/Response/status.dart';
 

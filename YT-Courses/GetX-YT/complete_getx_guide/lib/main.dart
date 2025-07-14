@@ -14,9 +14,9 @@ import 'without_mvvm/exampleThree/testScreen.dart';
 import 'without_mvvm/imagePickerPractice/homeScreen.dart';
 
 import 'mvvm_practice/resources/App_Routes/routes.dart';
-import 'mvvm_practice/view/Splash.dart';
-import 'mvvm_practice/view/splashS.dart';
-import 'mvvm_practice/view/splash_screen.dart';
+import 'mvvm_practice/view/Splash/splash_screen.dart';
+import 'mvvm_practice/view/splash_testing.dart';
+import 'mvvm_practice/view/splash_another_testing.dart';
 import 'without_mvvm/navigations&routes/screen1.dart';
 import 'without_mvvm/navigations&routes/screen2.dart';
 

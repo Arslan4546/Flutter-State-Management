@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:getxdemo/mvvm_practice/resources/App_Routes/routes_names.dart';
-import 'package:getxdemo/mvvm_practice/view_models/controller/user_preferences/user_preferences_model.dart';
+import 'package:getxdemo/mvvm_practice/view_models/controller/user_preferences_model.dart';
 
 class SplashServices {
   UserPreferencesModel userP = UserPreferencesModel();

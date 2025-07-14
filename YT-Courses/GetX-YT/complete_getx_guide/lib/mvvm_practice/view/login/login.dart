@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxdemo/mvvm_practice/resources/components/general_button.dart';
 import 'package:getxdemo/mvvm_practice/utils/utils_file.dart';
-import 'package:getxdemo/mvvm_practice/view_models/Login_Model/login_model.dart';
+import 'package:getxdemo/mvvm_practice/view_models/controller/login_model.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -22,9 +22,9 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         backgroundColor: Colors.teal,
         automaticallyImplyLeading: false,
-        title: Text(
-          "Login".tr,
-          style: const TextStyle(
+        title: const Text(
+          "Login",
+          style: TextStyle(
             color: Colors.white,
           ),
         ),
@@ -55,9 +55,9 @@ class _LoginViewState extends State<LoginView> {
                     },
                     controller: loginVM.emailController.value,
                     focusNode: loginVM.emailFocusNode.value,
-                    decoration: InputDecoration(
-                      hintText: "Email".tr,
-                      border: const OutlineInputBorder(),
+                    decoration: const InputDecoration(
+                      hintText: "Email",
+                      border: OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -73,9 +73,8 @@ class _LoginViewState extends State<LoginView> {
                     },
                     controller: loginVM.passwordController.value,
                     focusNode: loginVM.passwordFocusNode.value,
-                    decoration: InputDecoration(
-                        hintText: "Password".tr,
-                        border: const OutlineInputBorder()),
+                    decoration: const InputDecoration(
+                        hintText: "Password", border: OutlineInputBorder()),
                   ),
                 ],
               ),

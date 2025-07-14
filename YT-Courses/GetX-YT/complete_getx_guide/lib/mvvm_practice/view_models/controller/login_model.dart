@@ -8,7 +8,7 @@ import 'package:getxdemo/mvvm_practice/utils/utils_file.dart';
 import 'package:getxdemo/mvvm_practice/view_models/controller/user_preferences_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../repository/login_repo/login_Repository.dart';
+import '../../repository/login_Repository.dart';
 
 class LoginViewModel extends GetxController {
   UserPreferencesModel userP = UserPreferencesModel();
