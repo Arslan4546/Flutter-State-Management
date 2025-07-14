@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxdemo/mvvm_practice/resources/components/general_button.dart';
 import 'package:getxdemo/mvvm_practice/utils/utils_file.dart';
-import 'package:getxdemo/mvvm_practice/view_models/Login_Model/login_view_model.dart';
+import 'package:getxdemo/mvvm_practice/view_models/Login_Model/login_model.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -12,20 +12,19 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final LoginVM = Get.put(LoginViewModel());
+  final loginVM = Get.put(LoginViewModel());
 
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    final bool loading = false;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
         automaticallyImplyLeading: false,
         title: Text(
           "Login".tr,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),
@@ -50,18 +49,18 @@ class _LoginViewState extends State<LoginView> {
                     onFieldSubmitted: (value) {
                       UtilsClass.focusChange(
                         context,
-                        LoginVM.emailFocusNode.value,
-                        LoginVM.passwordFocusNode.value,
+                        loginVM.emailFocusNode.value,
+                        loginVM.passwordFocusNode.value,
                       );
                     },
-                    controller: LoginVM.emailController.value,
-                    focusNode: LoginVM.emailFocusNode.value,
+                    controller: loginVM.emailController.value,
+                    focusNode: loginVM.emailFocusNode.value,
                     decoration: InputDecoration(
                       hintText: "EmailHint".tr,
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   TextFormField(
@@ -72,16 +71,16 @@ class _LoginViewState extends State<LoginView> {
                         UtilsClass.snackBar("Password", "Enter your Password");
                       }
                     },
-                    controller: LoginVM.passwordController.value,
-                    focusNode: LoginVM.passwordFocusNode.value,
+                    controller: loginVM.passwordController.value,
+                    focusNode: loginVM.passwordFocusNode.value,
                     decoration: InputDecoration(
                         hintText: "PasswordHint".tr,
-                        border: OutlineInputBorder()),
+                        border: const OutlineInputBorder()),
                   ),
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             RoundButtonWidget(

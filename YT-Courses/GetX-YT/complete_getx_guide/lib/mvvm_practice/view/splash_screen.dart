@@ -1,36 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/mvvm_practice/data/app_exceptions.dart';
+import 'package:getxdemo/mvvm_practice/resources/Assets/images_assets.dart';
 import 'package:getxdemo/mvvm_practice/utils/utils_file.dart';
+import 'package:getxdemo/mvvm_practice/view_models/splash_services/splash_servies.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class Splash extends StatefulWidget {
+  const Splash({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<Splash> createState() => _SplashState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashState extends State<Splash> {
+  SplashServices splashServices = SplashServices();
+  @override
+  void initState() {
+    super.initState();
+    splashServices.isLogin();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text(
-          "نام".tr,
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      backgroundColor: Colors.teal,
+      // appBar: AppBar(
+      //   title: Text("Name".tr),
+      // ),
+      body: Center(
+        child: Text(
+          "Welcome".tr,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
-        centerTitle: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // throw ServerExceptions("Bad Server");
-
-          UtilsClass.toastMessage("Arslan Tariq");
-          UtilsClass.toastMessageCenter("Arslan");
-        },
-        backgroundColor: Colors.blue,
-      ),
+      // floatingActionButton: FloatingActionButton(onPressed: () {
+      //   UtilsClass.toastMessageCenter("Error Successfully shown");
+      // }),
     );
   }
 }

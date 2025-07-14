@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../repository/login_repo/login_Repository.dart';
 
 class LoginViewModel extends GetxController {
-  userPreference userP = userPreference();
+  UserPreferencesModel userP = UserPreferencesModel();
 
   final _api = LoginRepository();
   final emailController = TextEditingController().obs;
