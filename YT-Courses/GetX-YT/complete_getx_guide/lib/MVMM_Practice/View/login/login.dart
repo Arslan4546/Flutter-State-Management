@@ -88,6 +88,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 50,
                 width: 100,
                 title: "Login",
+                isLoading: loginVM.loading.value,
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     loginVM.login();
