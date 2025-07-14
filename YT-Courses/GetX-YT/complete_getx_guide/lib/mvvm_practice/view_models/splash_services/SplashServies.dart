@@ -9,8 +9,6 @@ class Splashservies {
 
   void isLogin() {
     userP.GetUser().then((value) {
-      print(value.isLogin);
-      print(value.token);
       if (value.isLogin == false || value.isLogin.toString() == "null") {
         Timer(const Duration(seconds: 3),
             () => Get.toNamed(RoutesNames.loginScreenRoute));

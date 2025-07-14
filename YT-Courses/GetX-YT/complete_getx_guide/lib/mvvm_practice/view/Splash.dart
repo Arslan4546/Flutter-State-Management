@@ -17,33 +17,28 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // splashservies.isLogin();
+    splashservies.isLogin();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.teal,
-      appBar: AppBar(
-        title: Text("Name".tr),
-      ),
-      body: Column(
-        children: [
-          const Image(image: AssetImage(ImagesAssets.splashImage)),
-          Center(
-            child: Text(
-              "Welcome".tr,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
-            ),
+      // appBar: AppBar(
+      //   title: Text("Name".tr),
+      // ),
+      body: Center(
+        child: Text(
+          "Welcome".tr,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
           ),
-        ],
+        ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        UtilsClass.toastMessageCenter("Error Successfully shown");
-      }),
+      // floatingActionButton: FloatingActionButton(onPressed: () {
+      //   UtilsClass.toastMessageCenter("Error Successfully shown");
+      // }),
     );
   }
 }
