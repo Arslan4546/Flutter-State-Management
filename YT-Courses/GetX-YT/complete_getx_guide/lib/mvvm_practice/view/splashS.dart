@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:getxdemo/mvvm_practice/resources/components/component1.dart';
+import 'package:getxdemo/mvvm_practice/resources/components/internet_exception_widget.dart';
 
 class SplashS extends StatefulWidget {
   const SplashS({super.key});
@@ -14,20 +14,16 @@ class SplashS extends StatefulWidget {
 class _SplashSState extends State<SplashS> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title:  const Text("Internet Exception",style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-        ),),
+        title: const Text(
+          "Internet Exception",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
-      body:  InternetExceptionWidget(
-        onpressed:  (){}
-
-
-      ),
+      body: InternetExceptionWidget(onPressed: () {}),
     );
   }
 }

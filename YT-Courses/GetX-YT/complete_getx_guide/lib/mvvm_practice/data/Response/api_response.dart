@@ -1,4 +1,4 @@
-import 'package:getxdemo/APIstatus/response/status.dart';
+import 'package:getxdemo/mvvm_practice/data/Response/status.dart';
 
 class ApiResponse<T> {
   Status? status;

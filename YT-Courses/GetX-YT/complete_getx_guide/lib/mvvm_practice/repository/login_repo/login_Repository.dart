@@ -1,12 +1,10 @@
-import 'package:getxdemo/mvvm_practice/network/networkAPI_Services.dart';
-import 'package:getxdemo/mvvm_practice/resources/appUrls/appUrls.dart';
+import 'package:getxdemo/mvvm_practice/data/Networks/networkAPI_Services.dart';
+import 'package:getxdemo/mvvm_practice/resources/App_Urls/appUrls.dart';
 
 class LoginRepository {
-
-  final _apiService = NetworkapiServices();
-  Future<dynamic> loginAPI(var data ) async {
-    dynamic response = await _apiService.postAPI(data,Appurls.LoginURl);
+  final _apiService = NetworkApiServices();
+  Future<dynamic> loginAPI(var data) async {
+    dynamic response = await _apiService.postAPI(data, Appurls.LoginURl);
     return response;
-
   }
 }

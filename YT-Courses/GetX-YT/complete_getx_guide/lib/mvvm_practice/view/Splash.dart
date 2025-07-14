@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/mvvm_practice/view/splash_services/SplashServies.dart';
+import 'package:getxdemo/mvvm_practice/resources/Assets/images_assets.dart';
+import 'package:getxdemo/mvvm_practice/utils/utils_file.dart';
+import 'package:getxdemo/mvvm_practice/view_models/splash_services/SplashServies.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -10,24 +12,38 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-
   Splashservies splashservies = Splashservies();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    splashservies.isLogin();
+    // splashservies.isLogin();
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.teal,
-      body: Center(
-        child: Text("Welcome".tr,style: TextStyle(
-          color: Colors.white,
-          fontSize: 22,
-        ),),
-      )
+      appBar: AppBar(
+        title: Text("Name".tr),
+      ),
+      body: Column(
+        children: [
+          const Image(image: AssetImage(ImagesAssets.splashImage)),
+          Center(
+            child: Text(
+              "Welcome".tr,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+              ),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        UtilsClass.toastMessageCenter("Error Successfully shown");
+      }),
     );
   }
 }
