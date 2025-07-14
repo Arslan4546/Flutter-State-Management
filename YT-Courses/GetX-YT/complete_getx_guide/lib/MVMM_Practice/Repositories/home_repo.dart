@@ -1,5 +1,5 @@
-import 'package:getxdemo/mvvm_practice/Models/Login_Model/user_model.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Urls/app_urls.dart';
+import 'package:getxdemo/MVMM_Practice/Models/Login_Model/user_model.dart';
+import 'package:getxdemo/MVMM_Practice/resources/App_Urls/app_urls.dart';
 
 import '../Data/Networks/networkAPI_Services.dart';
 
