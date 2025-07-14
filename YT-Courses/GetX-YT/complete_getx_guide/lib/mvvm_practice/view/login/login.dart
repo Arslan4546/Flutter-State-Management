@@ -56,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
                     controller: loginVM.emailController.value,
                     focusNode: loginVM.emailFocusNode.value,
                     decoration: InputDecoration(
-                      hintText: "EmailHint".tr,
+                      hintText: "Email".tr,
                       border: const OutlineInputBorder(),
                     ),
                   ),
@@ -74,7 +74,7 @@ class _LoginViewState extends State<LoginView> {
                     controller: loginVM.passwordController.value,
                     focusNode: loginVM.passwordFocusNode.value,
                     decoration: InputDecoration(
-                        hintText: "PasswordHint".tr,
+                        hintText: "Password".tr,
                         border: const OutlineInputBorder()),
                   ),
                 ],
