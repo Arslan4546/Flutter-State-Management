@@ -16,9 +16,9 @@ class HomeController extends GetxController {
   void setError(String _value) => error.value = _value;
 
   void getAPI() {
-    _api.UserAPI().then((value) {
+    _api.userAPI().then((value) {
       setRxRequestStatus(Status.COMPLETE);
-      setUserList(value as UserModel);
+      setUserList(value);
     }).onError((error, StackTrace) {
       setRxRequestStatus(Status.ERROR);
       setError(error.toString());

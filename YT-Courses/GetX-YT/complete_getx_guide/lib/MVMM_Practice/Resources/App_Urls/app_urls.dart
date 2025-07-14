@@ -2,5 +2,5 @@ class AppUrls {
   static const String baseURL = "https://reqres.in";
   static const String loginURl = "$baseURL/api/login";
   static const String userModel =
-      "https://webhook.site/4f6d5c23-7f23-4e94-8e71-dd22d63c4b79";
+      "https://webhook.site/19683bde-5bf1-44a4-91e7-07799e094167";
 }
