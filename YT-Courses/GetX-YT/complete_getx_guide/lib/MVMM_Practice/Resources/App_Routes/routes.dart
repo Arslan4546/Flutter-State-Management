@@ -1,10 +1,8 @@
 import 'package:get/get.dart';
-import 'package:getxdemo/without_mvvm/favoritePractice/homeScreen.dart'
-    hide HomeScreen;
-import 'package:getxdemo/mvvm_practice/view/login/login.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Routes/routes_names.dart';
-import 'package:getxdemo/mvvm_practice/view/Splash/splash_screen.dart';
-import 'package:getxdemo/mvvm_practice/view/home/home.dart';
+import 'package:getxdemo/MVMM_Practice/Resources/App_Routes/routes_names.dart';
+import 'package:getxdemo/MVMM_Practice/View/Splash/splash_screen.dart';
+import 'package:getxdemo/MVMM_Practice/View/login/login.dart';
+import 'package:getxdemo/without_mvvm/favoritePractice/homeScreen.dart';
 
 class AppRoutes {
   static appRoutes() => [

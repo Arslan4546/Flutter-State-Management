@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Colors/colors.dart';
 
 import 'general_button.dart';
 

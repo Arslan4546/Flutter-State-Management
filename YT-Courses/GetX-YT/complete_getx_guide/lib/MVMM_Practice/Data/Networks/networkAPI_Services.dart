@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:getxdemo/mvvm_practice/data/Networks/base_api_services.dart';
+import 'package:getxdemo/MVMM_Practice/Data/Networks/base_api_services.dart';
 import 'package:http/http.dart' as http;
 import '../app_exceptions.dart';
 
