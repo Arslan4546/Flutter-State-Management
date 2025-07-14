@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:getxdemo/mvvm_practice/resources/App_Components/internet_exception_widget.dart';
+import 'package:getxdemo/MVMM_Practice/resources/App_Components/internet_exception_widget.dart';
 
 class SplashS extends StatefulWidget {
   const SplashS({super.key});

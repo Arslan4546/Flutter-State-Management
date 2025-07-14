@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/mvvm_practice/Repositories/login_Repository.dart';
+import 'package:getxdemo/MVMM_Practice/Repositories/login_Repository.dart';
 import 'package:getxdemo/without_mvvm/favoritePractice/homeScreen.dart';
 import 'package:getxdemo/MVMM_Practice/Models/Login_Model/user_model.dart';
 import 'package:getxdemo/MVMM_Practice/resources/App_Routes/routes.dart';
