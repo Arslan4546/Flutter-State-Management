@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:getxdemo/MVMM_Practice/View/home/home.dart';
+import 'package:getxdemo/MVVM_Practice/View/home/home.dart';
 import 'package:getxdemo/without_mvvm/LanguageTranslation/eng&urdu.dart';
 import 'package:getxdemo/without_mvvm/LanguageTranslation/languages.dart';
 import 'package:getxdemo/without_mvvm/expampletwo/TestingScreen.dart';
@@ -14,10 +14,10 @@ import 'without_mvvm/ThemePractice/dart&lightTheme.dart';
 import 'without_mvvm/exampleThree/testScreen.dart';
 import 'without_mvvm/imagePickerPractice/homeScreen.dart';
 
-import 'MVMM_Practice/resources/App_Routes/routes.dart';
-import 'MVMM_Practice/view/Splash/splash_screen.dart';
-import 'MVMM_Practice/view/splash_testing.dart';
-import 'MVMM_Practice/view/splash_another_testing.dart';
+import 'MVVM_Practice/resources/App_Routes/routes.dart';
+import 'MVVM_Practice/view/Splash/splash_screen.dart';
+import 'MVVM_Practice/view/splash_testing.dart';
+import 'MVVM_Practice/view/splash_another_testing.dart';
 import 'without_mvvm/navigations&routes/screen1.dart';
 import 'without_mvvm/navigations&routes/screen2.dart';
 

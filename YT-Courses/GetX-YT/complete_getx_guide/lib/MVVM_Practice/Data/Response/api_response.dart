@@ -1,4 +1,4 @@
-import 'package:getxdemo/MVMM_Practice/Data/Response/status.dart';
+import 'package:getxdemo/MVVM_Practice/Data/Response/status.dart';
 
 class ApiResponse<T> {
   Status? status;

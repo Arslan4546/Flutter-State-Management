@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:getxdemo/MVMM_Practice/Data/Response/status.dart';
-import 'package:getxdemo/MVMM_Practice/Resources/App_Components/internet_exception_widget.dart';
-import 'package:getxdemo/MVMM_Practice/view_models/controller/home_model.dart';
+import 'package:getxdemo/MVVM_Practice/Data/Response/status.dart';
+import 'package:getxdemo/MVVM_Practice/Resources/App_Components/internet_exception_widget.dart';
+import 'package:getxdemo/MVVM_Practice/view_models/controller/home_model.dart';
 
 class HomeScreenAPI extends StatefulWidget {
   const HomeScreenAPI({super.key});

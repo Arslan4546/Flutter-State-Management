@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/MVMM_Practice/Resources/App_Colors/colors.dart';
+import 'package:getxdemo/MVVM_Practice/Resources/App_Colors/colors.dart';
 
 class UtilsClass {
   static void focusChange(

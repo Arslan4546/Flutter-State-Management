@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxdemo/MVMM_Practice/view_models/splash_services/splash_servies.dart';
+import 'package:getxdemo/MVVM_Practice/view_models/splash_services/splash_servies.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
