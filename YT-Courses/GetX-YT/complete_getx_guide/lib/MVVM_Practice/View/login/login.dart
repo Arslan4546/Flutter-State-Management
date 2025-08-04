@@ -87,19 +87,20 @@ class _LoginViewState extends State<LoginView> {
             Obx(
               () {
                 return RoundButtonWidget(
-                    buttonColor: Colors.teal,
-                    textColor: Colors.white,
-                    height: 50,
-                    width: 100,
-                    title: "Login",
-                    isLoading: loginVM.loading.value,
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        loginVM.login();
-                      } else {}
-                    });
+                  buttonColor: Colors.teal,
+                  textColor: Colors.white,
+                  height: 50,
+                  width: 100,
+                  title: "Login",
+                  isLoading: loginVM.loading.value,
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      loginVM.login();
+                    } else {}
+                  },
+                );
               },
-            )
+            ),
           ],
         ),
       ),
