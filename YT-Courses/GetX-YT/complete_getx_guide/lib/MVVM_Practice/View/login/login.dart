@@ -45,6 +45,7 @@ class _LoginViewState extends State<LoginView> {
                       if (value!.isEmpty) {
                         UtilsClass.snackBar("Email", "Enter your Email");
                       }
+                      return null;
                     },
                     onFieldSubmitted: (value) {
                       UtilsClass.focusChange(
@@ -70,6 +71,7 @@ class _LoginViewState extends State<LoginView> {
                       if (value!.isEmpty) {
                         UtilsClass.snackBar("Password", "Enter your Password");
                       }
+                      return null;
                     },
                     controller: loginVM.passwordController.value,
                     focusNode: loginVM.passwordFocusNode.value,
