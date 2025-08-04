@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:getxdemo/MVMM_Practice/Repositories/home_repository.dart';
+import 'package:getxdemo/MVVM_Practice/Repositories/home_repository.dart';
 import 'package:getxdemo/MVMM_Practice/models/User_Model/user_list_model.dart';
 
 import '../../Data/Response/status.dart';
